@@ -160,7 +160,7 @@ return [
     |
     */
 
-    'enableRoutesCache' => false,
+    'enableRoutesCache' => env('ROUTES_CACHE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -200,7 +200,7 @@ return [
     |
     */
 
-    'enableAssetCache' => false,
+    'enableAssetCache' => env('ASSET_CACHE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -254,7 +254,7 @@ return [
     |
     */
 
-    'databaseTemplates' => false,
+    'databaseTemplates' => env('DATABASE_TEMPLATES', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -360,7 +360,7 @@ return [
     |
     */
 
-    'linkPolicy' => 'detect',
+    'linkPolicy' => env('LINK_POLICY', 'detect'),
 
     /*
     |--------------------------------------------------------------------------
@@ -399,7 +399,7 @@ return [
     |
     */
 
-    'enableCsrfProtection' => true,
+    'enableCsrfProtection' => env('ENABLE_CSRF', true),
 
     /*
     |--------------------------------------------------------------------------

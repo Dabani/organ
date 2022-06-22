@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => 'mysql',
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -49,7 +49,7 @@ return [
 
             // 'url'                  => env('DATABASE_URL'),
 
-            'database' => base_path('storage/database.sqlite'),
+            'database' => env('DB_DATABASE', 'C:\\laragon\\www\\organ\\storage/database.sqlite'),
             'prefix' => '',
             'foreign_key_constraints' => true,
         ],
@@ -59,11 +59,11 @@ return [
             // 'url'         => env('DATABASE_URL'),
 
             'engine' => 'InnoDB',
-            'host' => '127.0.0.1',
-            'port' => '3306',
-            'database' => 'rasal_winter',
-            'username' => 'root',
-            'password' => 'sherif1973',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'rasal_winter'),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -76,11 +76,11 @@ return [
 
             // 'url'         => env('DATABASE_URL'),
 
-            'host' => '127.0.0.1',
-            'port' => 5432,
-            'database' => 'database',
-            'username' => 'root',
-            'password' => '',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', 5432),
+            'database' => env('DB_DATABASE', 'database'),
+            'username' => env('DB_USERNAME', ''),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
@@ -100,6 +100,11 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
+        ],
+        'redis' => [
+            'host' => env('REDIS_HOST', null),
+            'password' => env('REDIS_PASSWORD', ''),
+            'port' => env('REDIS_PORT', null),
         ],
     ],
 

@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'debug' => true,
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://organ.test',
+    'url' => env('APP_URL', 'http://organ.test'),
 
     /*
     |--------------------------------------------------------------------------
@@ -214,7 +214,7 @@ return [
     |
     */
 
-    'key' => '0Ms5Vm6REEb4fEVQwzXe29aLDJQNyVl8',
+    'key' => env('APP_KEY', ''),
     'cipher' => 'AES-256-CBC',
 
     /*
