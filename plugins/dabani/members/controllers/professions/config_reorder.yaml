@@ -1,0 +1,4 @@
+title: Professions
+modelClass: Dabani\Members\Models\Profession
+toolbar:
+    buttons: reorder_toolbar

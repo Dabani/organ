@@ -1,0 +1,10 @@
+name: Skills
+form: $/dabani/members/models/skill/fields.yaml
+modelClass: Dabani\Members\Models\Skill
+defaultRedirect: dabani/members/skills
+create:
+    redirect: 'dabani/members/skills/update/:id'
+    redirectClose: dabani/members/skills
+update:
+    redirect: dabani/members/skills
+    redirectClose: dabani/members/skills

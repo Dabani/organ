@@ -1,0 +1,52 @@
+plugin:
+    name: 'dabani.actions::lang.plugin.name'
+    description: 'dabani.actions::lang.plugin.description'
+    author: 'Robert Makuta'
+    icon: oc-icon-chain
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Actions
+        url: dabani/actions/activities
+        icon: icon-chain
+        sideMenu:
+            side-menu-item:
+                label: Goals
+                url: dabani/actions/goals
+                icon: icon-sign-in
+            side-menu-objective:
+                label: Objectives
+                url: dabani/actions/objectives
+                icon: icon-step-forward
+            side-menu-indicator:
+                label: Indicators
+                url: dabani/actions/indicators
+                icon: icon-clock-o
+            side-menu-target:
+                label: Targets
+                url: dabani/actions/targets
+                icon: icon-arrow-circle-o-up
+            side-menu-entity:
+                label: Entities
+                url: dabani/actions/entities
+                icon: icon-bank
+            side-menu-task:
+                label: Tasks
+                url: dabani/actions/tasks
+                icon: icon-tasks
+            side-menu-material:
+                label: Materials
+                url: dabani/actions/materials
+                icon: icon-truck
+            side-menu-material-task:
+                label: 'Task Material'
+                url: dabani/actions/materialtasks
+                icon: icon-shopping-cart
+            side-menu-challenge:
+                label: Challenges
+                url: dabani/actions/challenges
+                icon: icon-question
+            side-menu-assignment:
+                label: Assignments
+                url: dabani/actions/assignments
+                icon: icon-edit

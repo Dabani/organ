@@ -1,0 +1,10 @@
+name: Indicators
+form: $/dabani/actions/models/indicator/fields.yaml
+modelClass: Dabani\Actions\Models\Indicator
+defaultRedirect: dabani/actions/indicators
+create:
+    redirect: 'dabani/actions/indicators/update/:id'
+    redirectClose: dabani/actions/indicators
+update:
+    redirect: dabani/actions/indicators
+    redirectClose: dabani/actions/indicators

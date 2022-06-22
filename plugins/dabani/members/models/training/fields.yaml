@@ -1,0 +1,31 @@
+fields:
+  name:
+    label: Title
+    span: left
+    required: 1
+    type: text
+  slug:
+    label: Slug
+    span: right
+    required: 1
+    defaultFrom: name
+    dependsOn:
+      - name
+    preset:
+      field: name
+      type: slug
+    type: text
+  description:
+    label: Description
+    size: small
+    span: left
+    type: richeditor
+  award:
+    label: Award
+    span: right
+    type: text
+  status:
+    label: Status
+    span: left
+    default: 1
+    type: switch

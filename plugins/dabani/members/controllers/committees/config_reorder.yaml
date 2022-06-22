@@ -1,0 +1,4 @@
+title: Committees
+modelClass: Dabani\Members\Models\Committee
+toolbar:
+    buttons: reorder_toolbar

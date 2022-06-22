@@ -1,0 +1,38 @@
+fields:
+    name:
+        label: Title
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: small
+        span: left
+        type: richeditor
+    status:
+        label: Status
+        span: right
+        type: switch
+    mission:
+        label: Mission
+        size: tiny
+        span: left
+        type: richeditor
+    functionality:
+        label: 'How it works?'
+        size: tiny
+        span: right
+        type: richeditor
+    mandate:
+        label: Mandate
+        span: left
+        placeholder: 'For how long it''s elected'
+        type: text

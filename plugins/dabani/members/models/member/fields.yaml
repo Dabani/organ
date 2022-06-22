@@ -1,0 +1,169 @@
+fields:
+  first_name:
+    label: "First name"
+    span: left
+    placeholder: "First name"
+    required: 1
+    type: text
+  last_name:
+    label: "Last name"
+    span: right
+    placeholder: "Last name"
+    required: 1
+    type: text
+  email:
+    label: Email
+    span: left
+    required: 1
+    type: text
+  status:
+    label: Status
+    span: right
+    type: switch
+  profile:
+    label: Profile
+    span: full
+    type: partial
+    path: field_profile
+    manage:
+      form: $\dabani\members\models\profile\fields.yaml
+      list: $\dabani\members\models\profile\columns.yaml
+    view:
+      list: $\dabani\members\models\profile\columns.yaml
+      form: $\dabani\members\models\profile\fields.yaml
+      toolbarButtons: update|delete
+  studies:
+    label: Education
+    span: full
+    type: partial
+    path: field_study
+    showSearch: true
+    manage:
+      form: $\dabani\members\models\study\fields.yaml
+      list: $\dabani\members\models\study\columns.yaml
+    view:
+      list: $\dabani\members\models\study\columns.yaml
+  coachings:
+    label: Training
+    span: full
+    type: partial
+    path: field_coaching
+    showSearch: true
+    manage:
+      form: $\dabani\members\models\coaching\fields.yaml
+      list: $\dabani\members\models\coaching\columns.yaml
+    view:
+      list: $\dabani\members\models\coaching\columns.yaml
+  skills:
+    label: Skills
+    span: full
+    nameFrom: name
+    descriptionFrom: description
+    type: partial
+    path: field_skill
+    showSearch: true
+  careers:
+    label: Job
+    span: full
+    type: partial
+    path: field_career
+    showSearch: true
+    manage:
+      form: $\dabani\members\models\career\fields.yaml
+      list: $\dabani\members\models\career\columns.yaml
+    view:
+      list: $\dabani\members\models\career\columns.yaml
+  scouting:
+    label: Scouting
+    span: full
+    type: partial
+    path: field_scouting
+    manage:
+      form: $\dabani\members\models\scouting\fields.yaml
+      list: $\dabani\members\models\scouting\columns.yaml
+    view:
+      list: $\dabani\members\models\scouting\columns.yaml
+      form: $\dabani\members\models\scouting\fields.yaml
+      toolbarButtons: update|delete
+  contact:
+    label: Contact
+    span: full
+    type: partial
+    path: field_contact
+    manage:
+      form: $\dabani\members\models\contact\fields.yaml
+      list: $\dabani\members\models\contact\columns.yaml
+    view:
+      list: $\dabani\members\models\contact\columns.yaml
+      form: $\dabani\members\models\contact\fields.yaml
+      toolbarButtons: update|delete
+  networks:
+    label: "Social Media"
+    span: full
+    type: partial
+    path: field_network
+    showSearch: true
+    manage:
+      form: $\dabani\members\models\network\fields.yaml
+      list: $\dabani\members\models\network\columns.yaml
+    view:
+      list: $\dabani\members\models\network\columns.yaml
+  membership:
+    label: Membership
+    span: full
+    type: partial
+    path: field_membership
+    manage:
+      form: $\dabani\members\models\membership\fields.yaml
+      list: $\dabani\members\models\membership\columns.yaml
+    view:
+      list: $\dabani\members\models\membership\columns.yaml
+      form: $\dabani\members\models\membership\fields.yaml
+      toolbarButtons: update|delete
+  directors:
+    label: Committee
+    span: full
+    type: partial
+    path: field_director
+    showSearch: true
+    manage:
+      form: $\dabani\members\models\director\fields.yaml
+      list: $\dabani\members\models\director\columns.yaml
+    view:
+      list: $\dabani\members\models\director\columns.yaml
+  commissions:
+    label: Commission
+    span: full
+    type: partial
+    path: field_commission_member
+    showSearch: true
+    manage:
+      form: $\dabani\members\models\commissionMember\fields.yaml
+      list: $\dabani\members\models\commissionMember\columns.yaml
+    view:
+      list: $\dabani\members\models\commissionMember\columns.yaml
+  contributions:
+    label: Contribution
+    span: full
+    type: partial
+    path: field_contribution
+    showSearch: true
+    manage:
+      form: $\dabani\members\models\contribution\fields.yaml
+      list: $\dabani\members\models\contribution\columns.yaml
+    view:
+      list: $\dabani\members\models\contribution\columns.yaml
+  events:
+    label: Attendances
+    span: full
+    nameFrom: name
+    descriptionFrom: description
+    type: partial
+    path: field_event
+    showSearch: true
+  user:
+    label: User
+    span: auto
+    nameFrom: name
+    descriptionFrom: description
+    type: relation

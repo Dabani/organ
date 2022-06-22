@@ -1,0 +1,4 @@
+title: Careers
+modelClass: Dabani\Members\Models\Career
+toolbar:
+    buttons: reorder_toolbar

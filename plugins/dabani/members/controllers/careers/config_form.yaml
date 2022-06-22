@@ -1,0 +1,10 @@
+name: Careers
+form: $/dabani/members/models/career/fields.yaml
+modelClass: Dabani\Members\Models\Career
+defaultRedirect: dabani/members/careers
+create:
+    redirect: 'dabani/members/careers/update/:id'
+    redirectClose: dabani/members/careers
+update:
+    redirect: dabani/members/careers
+    redirectClose: dabani/members/careers

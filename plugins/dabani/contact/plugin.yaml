@@ -1,0 +1,6 @@
+plugin:
+    name: 'dabani.contact::lang.plugin.name'
+    description: 'dabani.contact::lang.plugin.description'
+    author: 'Robert Makuta'
+    icon: oc-icon-envelope
+    homepage: ''

@@ -1,0 +1,10 @@
+name: Challenges
+form: $/dabani/actions/models/challenge/fields.yaml
+modelClass: Dabani\Actions\Models\Challenge
+defaultRedirect: dabani/actions/challenges
+create:
+    redirect: 'dabani/actions/challenges/update/:id'
+    redirectClose: dabani/actions/challenges
+update:
+    redirect: dabani/actions/challenges
+    redirectClose: dabani/actions/challenges

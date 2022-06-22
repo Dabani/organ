@@ -1,0 +1,10 @@
+columns:
+    name:
+        label: 'Field of Education'
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

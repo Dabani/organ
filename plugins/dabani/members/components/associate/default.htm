@@ -1,0 +1,563 @@
+{% set associate = __SELF__.associate %}
+{% set groups = __SELF__.groups %}
+{% set contributions = __SELF__.contributions %}
+{% set allContributions = __SELF__.allContributions %}
+{% set causeContributions = __SELF__.causeContributions %}
+{% set total = __SELF__.total %}
+{% set average = __SELF__.average %}
+{% set counter = __SELF__.counter %}
+<div class="container my-4">
+  {% if groups|length > 0 or associate.email == user.email %}
+  {#
+  <div class="row">{{ associate }}</div>
+  #}
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card shadow-sm border-0 testimonial-card mt-4 mb-3">
+        <div class="card-up aqua-gradient"></div>
+        <div class="avatar mx-auto white">
+          {% if associate.profile.poster %}
+            <img src="{{ associate.profile.poster.thumb(200,200,{'mode':'crop'}) }}" class="img-fluid rounded-circle" alt="{{ associate.first_name }} {{ associate.last_name |upper }}">
+            {% else %}
+            <img src="{{ 'assets/images/user-default.png'|theme }}" class="img-fluid rounded-circle" alt="{{ associate.first_name }} {{ associate.last_name |upper }}">
+          {% endif %}
+        </div>
+        <div class="card-body text-center">
+          <h4 class="card-title font-weight-bold">
+            {{ associate.first_name }} {{ associate.last_name |upper }}
+          </h4>
+          <hr />
+          <h5 class="bg-warning w-100">Identification</h5>
+          <table class="w-100">
+            <tbody class="text-start">
+              <tr>
+                <th><i class="bi bi-gender-ambiguous fs-3 pe-3 text-warning"></i> Gender</th>
+                <td class="ps-4">
+                  {% if associate.profile.gender == 'M' %} Male {% else %}
+                  Female {% endif %}
+                </td>
+              </tr>
+              <tr>
+                <th><i class="bi bi-translate fs-3 pe-3 text-warning"></i> Nationality</th>
+                <td class="ps-4">{{ associate.profile.nationality.name }}</td>
+              </tr>
+              <tr>
+                <th>
+                  <i class="bi bi-card-text fs-3 pe-3 text-warning"></i> National ID/Passport
+                </th>
+                <td class="ps-4">{{ associate.profile.id_passport }}</td>
+              </tr>
+              <tr>
+                <th><i class="bi bi-calendar4-week fs-3 pe-3 text-warning"></i> Date of Birth</th>
+                <td class="ps-4">
+                  {{ associate.profile.date_of_birth|date("d/m/Y") }}
+                </td>
+              </tr>
+              <tr>
+                <th><i class="bi bi-geo-alt fs-3 pe-3 text-warning"></i> Place of birth</th>
+                <td class="ps-4">{{ associate.profile.place_of_birth }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h5 class="bg-warning w-100">Education</h5>
+          <table class="w-100">
+            {% for study in associate.studies %}
+            <theader>
+              <tr class="bg-info bg-gradient text-white">
+                <th colspan="3">{{ study.name }}</th>
+              </tr>
+            </theader>
+            <tbody class="text-start">
+              <tr>
+                <th>
+                  <i class="bi bi-calendar4-week fs-3 pe-3 text-warning"></i> {{
+                  study.from|date("d/m/Y") }} - {{ study.to|date("d/m/Y") }}
+                </th>
+                <td class="ps-4">
+                  {{ study.level.name }} ({{ study.level.description|striptags
+                  }})
+                </td>
+                <td class="ps-4">{{ study.institution }}</td>
+              </tr>
+              <tr>
+                <th></th>
+                <td colspan="2" class="ps-4 fst-italic fs-6">
+                  {{ study.description|raw }}
+                </td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+          <hr />
+          <h5 class="bg-warning w-100">Trainings</h5>
+          <table class="w-100">
+            {% for coaching in associate.coachings %}
+            <theader>
+              <tr class="bg-info bg-gradient text-white">
+                <th colspan="3">{{ coaching.name }}</th>
+              </tr>
+            </theader>
+            <tbody class="text-start">
+              <tr>
+                <th>
+                  <i class="bi bi-calendar4-week fs-3 pe-3 text-warning"></i> {{
+                  coaching.from|date("d/m/Y") }} - {{ coaching.to|date("d/m/Y")
+                  }}
+                </th>
+                <td class="ps-4">{{ coaching.training.name }}</td>
+                <td class="ps-4">{{ coaching.institution }}</td>
+              </tr>
+              <tr>
+                <th></th>
+                <td colspan="2" class="ps-4 fst-italic fs-6">
+                  {{ coaching.description|raw }}
+                </td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+          <hr />
+          <h5 class="bg-warning w-100">Work Experience</h5>
+          <table class="w-100">
+            {% for career in associate.careers %}
+            <theader>
+              <tr class="bg-info bg-gradient text-white">
+                <th colspan="3">{{ career.name }}</th>
+              </tr>
+            </theader>
+            <tbody class="text-start">
+              <tr>
+                <th>
+                  <i class="bi bi-calendar4-week fs-3 pe-3 text-warning"></i> {{
+                  career.from|date("d/m/Y") }} - {{ career.to|date("d/m/Y") }}
+                </th>
+                <td class="ps-4 bg-light">{{ career.profession.name }}</td>
+                <td class="ps-4">{{ career.institution }}</td>
+              </tr>
+              <tr>
+                <th></th>
+                <td colspan="2" class="ps-4 fst-italic fs-6">
+                  {{ career.description|raw }}
+                </td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+          <hr />
+        </div>
+      </div>
+
+
+      <div class="card shadow-sm border-0 testimonial-card mt-4 mb-3">
+        <div class="card-body text-center">
+          <h4 class="card-title font-weight-bold">
+            Contributions
+          </h4>
+          <hr />
+          {% if contributions|length > 0 %}
+          <table class="table table-striped w-100">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Currency</th>
+              </tr>
+            </thead>
+            <tbody class="text-start">
+              {% for contribution in contributions %}
+              <tr>
+                <th scope="row">{{ contribution.date_of_contribution|date('d/m/Y') }}</th>
+                <td>{{ contribution.event.name }}</td>
+                <td>{{ contribution.cause.name }}</td>
+                <td class="text-end">{{ contribution.amount|number_format(2, '.', ',') }}</td>
+                <td>{{ contribution.currency }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <th scope="row" colspan="3">Total contributions</th>
+                <th class="text-end">{{ total|number_format(2, '.', ',') }}</th>
+                <th>Rwf</th>
+              </tr>
+              <tr>
+                <th scope="row" colspan="3">Average</th>
+                <th class="text-end">{{ average|number_format(2, '.', ',') }}</th>
+                <th>Rwf</th>
+              </tr>
+              <tr>
+                <th scope="row" colspan="3">Countributions count</th>
+                <th class="text-end">{{ counter|number_format(0, '.', ',') }}</th>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="card shadow-sm border-0 testimonial-card mt-4 mb-3">
+        <div class="card-body text-center">
+          <h4 class="card-title font-weight-bold">
+            Attendances
+          </h4>
+          <hr />
+          {% if associate.events|length > 0 %}
+          <table class="table table-striped w-100">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Event</th>
+                <th scope="col">Venue</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody class="text-start">
+              {% for event in associate.events %}
+              <tr>
+                <th scope="row">{{ event.event_date|date('d/m/Y') }}</th>
+                <td>{{ event.name }}</td>
+                <td>{{ event.venue }}</td>
+                <td>{{ event.time }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="card shadow-sm border-0 testimonial-card mt-4 mb-3">
+        <div class="card-body text-center">
+          <h4 class="card-title font-weight-bold">
+            All Contributions
+          </h4>
+          <hr />
+
+          {% if allContributions|length > 0 %}
+          <table class="table table-striped w-100">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Contributor</th>
+                <th scope="col">Description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Currency</th>
+              </tr>
+            </thead>
+            <tbody class="text-start">
+              {% for contrib in allContributions %}
+              <tr>
+                <th scope="row">{{ contrib.date_of_contribution|date('d/m/Y') }}</th>
+                <td>{{ contrib.firstname }} {{ contrib.lastname }}</td>
+                <td>{{ contrib.event }}</td>
+                <td>{{ contrib.cause }}</td>
+                <td class="text-end">{{ contrib.amount|number_format(2, '.', ',') }}</td>
+                <td>{{ contrib.currency }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 mt-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold w-100 bg-warning text-center">
+            Skills
+          </h5>
+
+          <ul class="list-inline">
+            {% for skill in associate.skills %}
+              {% if skill.status == true %}
+              <li class="list-inline-item btn btn-info my-1">{{ skill.name }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          <hr />
+        </div>
+      </div>
+      <div class="card shadow-sm border-0 mt-4 mb-3">
+        <div class="card-body">
+          <div>
+            <h5 class="card-title font-weight-bold w-100 bg-warning text-center">
+              Membership
+            </h5>
+
+            <table class="table table-borderless table-sm mb-0">
+              <tbody>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-person-plus fs-3 me-3 text-warning"></i
+                    >Joined
+                  </td>
+                  <td class="float-end font-weight-normal">
+                    <p class="mt-3">{{ associate.membership.joined_at|date("d/m/Y") }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-list-ol fs-3 me-3 text-warning"></i
+                    >Matricule
+                  </td>
+                  <td class="float-end font-weight-normal">
+                    <p class="mt-3">{{ associate.membership.matricule }}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+
+          <div class="px-3">
+            <h6 class="w-100 bg-info p-2 text-white">Committee Background</h6>
+            {% for director in associate.directors %}
+            <table class="table table-borderless table-sm mb-0">
+              <theader>
+                <tr>
+                  <th>{{ director.committee.name }}</th>
+                </tr>
+              </theader>
+              <tbody>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-calendar3 fs-3 me-3 text-warning"></i>
+                    {{ director.from|date("d/m/Y") }} - {{ director.to|date("d/m/Y") }}
+                  </td>
+                </tr>
+                <tr class="px-4">
+                  <td class="float-end w-100 font-weight-normal
+                  {% if director.to|date("Y-m-d") < 'now'|date("Y-m-d") %}
+                    bg-danger text-white
+                  {% else %}
+                    {% if director.status == true %}
+                    bg-success text-white
+                    {% else %}
+                    bg-warning
+                    {% endif %}
+                  {% endif %}">
+                  {{ director.position.name }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {% endfor %}
+            <hr>
+
+            <h6 class="w-100 bg-info p-2 text-white">Commission Status</h6>
+            {% for commission in associate.commissions %}
+            <table class="table table-borderless table-sm mb-0">
+              <theader>
+                <tr>
+                  <th>{{ commission.commission.name }}</th>
+                </tr>
+              </theader>
+              <tbody>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-calendar3 fs-3 me-3 text-warning"></i>
+                    {{ commission.from|date("d/m/Y") }} - {{ commission.to|date("d/m/Y") }}
+                  </td>
+                </tr>
+                <tr class="px-4">
+                  <td class="float-end w-100 font-weight-normal
+                  {% if commission.to|date("Y-m-d") < 'now'|date("Y-m-d") %}
+                    bg-danger text-white
+                  {% else  %}
+                    {% if commission.status == true %}
+                    bg-success text-white
+                    {% else %}
+                    bg-warning
+                    {% endif %}
+                  {% endif %}">
+                  {{ commission.position.name }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            {% endfor %}
+          </div>
+
+          <hr />
+        </div>
+      </div>
+      <div class="card shadow-sm border-0 mt-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold w-100 bg-warning text-center">
+            Contact
+          </h5>
+          <p class="card-text">
+            <i class="bi bi-envelope fs-3 pe-3 text-warning"></i>
+            <a href="mailto:{{ associate.email }}">{{ associate.email }}</a>
+          </p>
+          <p class="card-text">
+            <i class="bi bi-telephone fs-3 pe-3 text-warning"></i>
+            <a href="tel:{{ associate.contact.telephone }}">
+              +{{ associate.contact.telephone|number_format(0, '.', '-') }}
+            </a>
+          </p>
+          <div class="d-flex justify-content-between">
+            <p>
+              <i class="bi bi-translate fs-3 pe-3 text-warning"></i>{{
+              associate.contact.country.name }}
+            </p>
+          </div>
+          <div>
+            <table class="table table-borderless table-sm mb-0">
+              <tbody>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-building fs-3 me-3 text-warning"></i
+                    >Province/City
+                  </td>
+                  <td class="float-end font-weight-normal">
+                    <p class="mt-3">{{ associate.contact.province }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-house fs-3 me-3 text-warning"></i>District
+                  </td>
+                  <td class="float-end font-weight-normal">
+                    <p class="mt-3">{{ associate.contact.city }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-pin-map fs-3 me-3 text-warning"></i
+                    >County/Village
+                  </td>
+                  <td class="float-end font-weight-normal">
+                    <p class="mt-3">{{ associate.contact.village }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="font-weight-normal align-middle">
+                    <i class="bi bi-signpost fs-3 me-3 text-warning"></i>Street
+                  </td>
+                  <td class="float-end font-weight-normal">
+                    <p class="mt-3">{{ associate.contact.street }}</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div class="card shadow-sm border-0 mt-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold w-100 bg-warning text-center">
+            Social Media
+          </h5>
+
+          <table class="table table-borderless table-sm mb-0">
+            <tbody>
+              {% for network in associate.networks %}
+              <tr>
+                <td class="font-weight-normal align-middle">
+                  <i class="bi {% if network.name|lower == 'facebook' %}
+                    bi-facebook
+                    {% elseif network.name|lower == 'twitter' %}
+                      bi-twitter
+                    {% elseif network.name|lower == 'whatsapp' %}
+                      bi-whatsapp
+                    {% elseif network.name|lower == 'telegram' %}
+                      bi-telegram
+                    {% elseif network.name|lower == 'linkedin' %}
+                      bi-linkedin
+                    {% elseif network.name|lower == 'instagram' %}
+                      bi-instagram
+                    {% elseif network.name|lower == 'youtube' %}
+                      bi-youtube
+                    {% elseif network.name|lower == 'pinterest' %}
+                      bi-pinterest
+                    {% elseif network.name|lower == 'github' %}
+                      bi-github
+                    {% elseif network.name|lower == 'website' or network.name|lower == 'web' %}
+                      bi-globe
+                    {% else %}
+                      bi-share
+                    {% endif %} fs-3 me-3 text-warning"></i
+                  >{{ network.name }}
+                </td>
+                <td class="float-end font-weight-normal">
+                  <p class="mt-3"><a href="{{ network.url }}">{{ network.social_media_id }}</a></p>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <hr />
+        </div>
+      </div>
+      <div class="card shadow-sm border-0 mt-4 mb-3">
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold w-100 bg-warning text-center">
+            Scouting Background
+          </h5>
+
+          <table class="table table-borderless table-sm mb-0">
+            <tbody>
+              <tr>
+                <td class="font-weight-normal align-middle">
+                  <i class="bi bi-flag fs-3 me-3 text-warning"></i
+                  >Promise
+                </td>
+                <td class="float-end font-weight-normal">
+                  <p class="mt-3">{{ associate.scouting.promise_date|date("d/m/Y") }}</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="font-weight-normal align-middle">
+                  <i class="bi bi-union fs-3 me-3 text-warning"></i
+                  >Affiliation
+                </td>
+                <td class="float-end font-weight-normal">
+                  <p class="mt-3">{{ associate.scouting.unit_affiliation }}</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="font-weight-normal align-middle">
+                  <i class="bi bi-signpost-split fs-3 me-3 text-warning"></i
+                  >Totem Date
+                </td>
+                <td class="float-end font-weight-normal">
+                  <p class="mt-3">{{ associate.scouting.totem_date|date("d/m/Y") }}</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="font-weight-normal align-middle">
+                  <i class="bi bi-bug fs-3 me-3 text-warning"></i
+                  >Totem
+                </td>
+                <td class="float-end font-weight-normal">
+                  <p class="mt-3">{{ associate.scouting.totem }}</p>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="row">
+    <div class="card border-0 shodow-sm">
+      <div class="card-body">
+        <p class="text-danger">
+          Sorry, you don't have sufficient right to display this page details!
+          <br>Please contact RASAL Admin!
+        </p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>

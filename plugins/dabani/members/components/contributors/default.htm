@@ -1,0 +1,58 @@
+{% set contributors = __SELF__.contributors %}
+{% set total = __SELF__.total %}
+{% set average = __SELF__.average %}
+{% set counter = __SELF__.counter %}
+<div class="container my-4">
+  <div class="row">
+    <div class="card border-0 shadow-sm">
+        <div class="card-body text-center">
+          <h4 class="card-title font-weight-bold">
+            Contributors
+          </h4>
+          <hr />
+          {% if contributors|length > 0 %}
+          <table class="table table-striped w-100">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Full name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Currency</th>
+              </tr>
+            </thead>
+            <tbody class="text-start">
+              {% for contributor in contributors %}
+              <tr>
+                <th scope="row">{{ contributor.date_of_contribution|date('d/m/Y') }}</th>
+                <td>{{ contributor.member.last_name|upper }} {{ contributor.member.first_name }}</td>
+                <td>{{ contributor.event.name }}</td>
+                <td>{{ contributor.cause.name }}</td>
+                <td class="text-end">{{ contributor.amount|number_format(2, '.', ',') }}</td>
+                <td>{{ contributor.currency }}</td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <th scope="row" colspan="4">Total contributions</th>
+                <th class="text-end">{{ total|number_format(2, '.', ',') }}</th>
+                <th>Rwf</th>
+              </tr>
+              <tr>
+                <th scope="row" colspan="4">Average</th>
+                <th class="text-end">{{ average|number_format(2, '.', ',') }}</th>
+                <th>Rwf</th>
+              </tr>
+              <tr>
+                <th scope="row" colspan="4">Countributions count</th>
+                <th class="text-end">{{ counter|number_format(0, '.', ',') }}</th>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          {% endif %}
+        </div>
+
+    </div>
+  </row>
+</div>

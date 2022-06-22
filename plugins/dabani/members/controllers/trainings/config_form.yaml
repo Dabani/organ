@@ -1,0 +1,10 @@
+name: Trainings
+form: $/dabani/members/models/training/fields.yaml
+modelClass: Dabani\Members\Models\Training
+defaultRedirect: dabani/members/trainings
+create:
+    redirect: 'dabani/members/trainings/update/:id'
+    redirectClose: dabani/members/trainings
+update:
+    redirect: dabani/members/trainings
+    redirectClose: dabani/members/trainings

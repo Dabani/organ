@@ -1,0 +1,10 @@
+name: Levels
+form: $/dabani/members/models/level/fields.yaml
+modelClass: Dabani\Members\Models\Level
+defaultRedirect: dabani/members/levels
+create:
+    redirect: 'dabani/members/levels/update/:id'
+    redirectClose: dabani/members/levels
+update:
+    redirect: dabani/members/levels
+    redirectClose: dabani/members/levels

@@ -1,0 +1,29 @@
+fields:
+    name:
+        label: Material
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: tiny
+        span: left
+        type: richeditor
+    status:
+        label: Status
+        span: right
+        type: switch
+    tasks:
+        label: Tasks
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: relation

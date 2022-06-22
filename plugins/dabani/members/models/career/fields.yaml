@@ -1,0 +1,50 @@
+fields:
+    member:
+        label: Member
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        select: 'concat(first_name, " ", last_name)'
+        type: relation
+    profession:
+        label: Profession
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        required: 1
+        type: relation
+    name:
+        label: Post
+        span: left
+        placeholder: 'Name your position'
+        required: 1
+        type: text
+    institution:
+        label: Employer
+        span: right
+        placeholder: 'Employer name or Company'
+        required: 1
+        type: text
+    description:
+        label: Description
+        size: small
+        span: left
+        placeholder: 'Describe your duties'
+        type: richeditor
+    from:
+        label: 'Start of the job'
+        mode: date
+        span: right
+        required: 1
+        type: datepicker
+    to:
+        label: 'End of the job'
+        mode: date
+        span: right
+        type: datepicker
+    status:
+        label: Status
+        span: auto
+        required: 0
+        type: switch

@@ -1,0 +1,14 @@
+materials:
+  label: Material
+  manage:
+    form: $\dabani\actions\models\material\fields.yaml
+    list: $\dabani\actions\models\material\columns.yaml
+  view:
+    list: $\dabani\actions\models\material\columns.yaml
+challenges:
+  label: Challenge
+  manage:
+    form: $\dabani\actions\models\challenge\fields.yaml
+    list: $\dabani\actions\models\challenge\columns.yaml
+  view:
+    list: $\dabani\actions\models\challenge\columns.yaml

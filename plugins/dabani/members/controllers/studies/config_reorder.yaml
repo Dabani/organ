@@ -1,0 +1,4 @@
+title: Studies
+modelClass: Dabani\Members\Models\Study
+toolbar:
+    buttons: reorder_toolbar

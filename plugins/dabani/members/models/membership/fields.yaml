@@ -1,0 +1,21 @@
+fields:
+    member:
+        label: 'Full name'
+        nameFrom: full_name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    matricule:
+        label: Matricule
+        span: right
+        type: text
+    joined_at:
+        label: 'Date of Joining'
+        mode: date
+        span: left
+        type: datepicker
+    status:
+        label: Status
+        span: right
+        type: switch

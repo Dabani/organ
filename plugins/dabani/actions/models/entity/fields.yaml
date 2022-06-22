@@ -1,0 +1,40 @@
+fields:
+    name:
+        label: Entity
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: tiny
+        span: left
+        type: richeditor
+    category:
+        label: Category
+        options:
+            committee: Committee
+            commission: Commission
+            office: Office
+            fellowship: Fellowship
+            community: Community
+        showSearch: true
+        span: right
+        type: dropdown
+    status:
+        label: Status
+        span: auto
+        type: switch
+    users:
+        label: Users
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation

@@ -1,0 +1,4 @@
+title: Members
+modelClass: Dabani\Members\Models\Member
+toolbar:
+  buttons: reorder_toolbar

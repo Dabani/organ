@@ -1,0 +1,34 @@
+fields:
+    name:
+        label: Department
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        defaultFrom: name
+        dependsOn:
+            - name
+        preset:
+            field: name
+            type: slug
+        type: text
+    field:
+        label: 'Field of Education'
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    status:
+        label: Status
+        span: right
+        default: 1
+        type: switch
+    description:
+        label: Description
+        span: left
+        size: ''
+        type: richeditor

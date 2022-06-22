@@ -1,0 +1,10 @@
+name: Commissions
+form: $/dabani/members/models/commission/fields.yaml
+modelClass: Dabani\Members\Models\Commission
+defaultRedirect: dabani/members/commissions
+create:
+    redirect: 'dabani/members/commissions/update/:id'
+    redirectClose: dabani/members/commissions
+update:
+    redirect: dabani/members/commissions
+    redirectClose: dabani/members/commissions

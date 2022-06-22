@@ -1,0 +1,4 @@
+title: Scoutings
+modelClass: Dabani\Members\Models\Scouting
+toolbar:
+    buttons: reorder_toolbar

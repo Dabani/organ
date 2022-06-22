@@ -1,0 +1,20 @@
+columns:
+    name:
+        label: Country
+        type: text
+        searchable: true
+        sortable: true
+    country_code:
+        label: 'Country Code'
+        type: text
+        searchable: true
+        sortable: true
+    telephone_code:
+        label: 'Telephone Code'
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

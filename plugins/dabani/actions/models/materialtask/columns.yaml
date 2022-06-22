@@ -1,0 +1,43 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    material_id:
+        label: Material
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: material
+    task_id:
+        label: Task
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: task
+    quantity:
+        label: Quantity
+        type: number
+        searchable: true
+        sortable: true
+    unity:
+        label: Unity
+        type: text
+        searchable: true
+        sortable: true
+    cost:
+        label: Cost
+        type: number
+        searchable: true
+        sortable: true
+    currency:
+        label: Currency
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

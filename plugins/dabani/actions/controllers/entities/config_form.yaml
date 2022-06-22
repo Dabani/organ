@@ -1,0 +1,10 @@
+name: Entities
+form: $/dabani/actions/models/entity/fields.yaml
+modelClass: Dabani\Actions\Models\Entity
+defaultRedirect: dabani/actions/entities
+create:
+    redirect: 'dabani/actions/entities/update/:id'
+    redirectClose: dabani/actions/entities
+update:
+    redirect: dabani/actions/entities
+    redirectClose: dabani/actions/entities

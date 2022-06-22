@@ -1,0 +1,4 @@
+title: Indicators
+modelClass: Dabani\Actions\Models\Indicator
+toolbar:
+    buttons: reorder_toolbar

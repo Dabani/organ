@@ -1,0 +1,10 @@
+name: Directors
+form: $/dabani/members/models/director/fields.yaml
+modelClass: Dabani\Members\Models\Director
+defaultRedirect: dabani/members/directors
+create:
+    redirect: 'dabani/members/directors/update/:id'
+    redirectClose: dabani/members/directors
+update:
+    redirect: dabani/members/directors
+    redirectClose: dabani/members/directors

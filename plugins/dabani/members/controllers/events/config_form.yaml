@@ -1,0 +1,10 @@
+name: Events
+form: $/dabani/members/models/event/fields.yaml
+modelClass: Dabani\Members\Models\Event
+defaultRedirect: dabani/members/events
+create:
+    redirect: 'dabani/members/events/update/:id'
+    redirectClose: dabani/members/events
+update:
+    redirect: dabani/members/events
+    redirectClose: dabani/members/events

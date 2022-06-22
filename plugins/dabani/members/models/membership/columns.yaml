@@ -1,0 +1,22 @@
+columns:
+    member_id:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name, " ", last_name)'
+        relation: member
+    matricule:
+        label: Matricule
+        type: text
+        searchable: true
+        sortable: true
+    joined_at:
+        label: 'Date of Joining'
+        type: date
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

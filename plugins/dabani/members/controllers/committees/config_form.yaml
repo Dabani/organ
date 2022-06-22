@@ -1,0 +1,10 @@
+name: Committees
+form: $/dabani/members/models/committee/fields.yaml
+modelClass: Dabani\Members\Models\Committee
+defaultRedirect: dabani/members/committees
+create:
+    redirect: 'dabani/members/committees/update/:id'
+    redirectClose: dabani/members/committees
+update:
+    redirect: dabani/members/committees
+    redirectClose: dabani/members/committees

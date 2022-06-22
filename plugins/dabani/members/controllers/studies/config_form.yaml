@@ -1,0 +1,10 @@
+name: Studies
+form: $/dabani/members/models/study/fields.yaml
+modelClass: Dabani\Members\Models\Study
+defaultRedirect: dabani/members/studies
+create:
+    redirect: 'dabani/members/studies/update/:id'
+    redirectClose: dabani/members/studies
+update:
+    redirect: dabani/members/studies
+    redirectClose: dabani/members/studies

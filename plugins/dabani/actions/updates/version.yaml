@@ -1,0 +1,44 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table dabani_actions_activities'
+    - builder_table_create_dabani_actions_activities.php
+1.0.3:
+    - 'Created table dabani_actions_goals'
+    - builder_table_create_dabani_actions_goals.php
+1.0.4:
+    - 'Created table dabani_actions_objectives'
+    - builder_table_create_dabani_actions_objectives.php
+1.0.5:
+    - 'Created table dabani_actions_indicators'
+    - builder_table_create_dabani_actions_indicators.php
+1.0.6:
+    - 'Created table dabani_actions_targets'
+    - builder_table_create_dabani_actions_targets.php
+1.0.7:
+    - 'Created table dabani_actions_chiefs'
+    - builder_table_create_dabani_actions_chiefs.php
+1.0.8:
+    - 'Created table dabani_actions_entities'
+    - builder_table_create_dabani_actions_entities.php
+1.0.9:
+    - 'Created table dabani_actions_entities_users'
+    - builder_table_create_dabani_actions_entities_users.php
+1.0.10:
+    - 'Created table dabani_actions_tasks'
+    - builder_table_create_dabani_actions_tasks.php
+1.0.11:
+    - 'Created table dabani_actions_materials'
+    - builder_table_create_dabani_actions_materials.php
+1.0.12:
+    - 'Created table dabani_actions_materials_tasks'
+    - builder_table_create_dabani_actions_materials_tasks.php
+1.0.13:
+    - 'Created table dabani_actions_challenges'
+    - builder_table_create_dabani_actions_challenges.php
+1.0.14:
+    - 'Created table dabani_actions_assignments'
+    - builder_table_create_dabani_actions_assignments.php
+1.0.15:
+    - 'Created table dabani_actions_concepts'
+    - builder_table_create_dabani_actions_concepts.php

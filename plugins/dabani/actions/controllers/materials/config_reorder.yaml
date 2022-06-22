@@ -1,0 +1,4 @@
+title: Materials
+modelClass: Dabani\Actions\Models\Material
+toolbar:
+    buttons: reorder_toolbar

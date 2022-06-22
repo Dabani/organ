@@ -1,0 +1,107 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table dabani_members_'
+    - builder_table_create_dabani_members_.php
+1.0.3:
+    - 'Created table dabani_members_countries'
+    - builder_table_create_dabani_members_countries.php
+1.0.4:
+    - 'Created table dabani_members_levels'
+    - builder_table_create_dabani_members_levels.php
+1.0.5:
+    - 'Created table dabani_members_fields'
+    - builder_table_create_dabani_members_fields.php
+1.0.6:
+    - 'Created table dabani_members_departments'
+    - builder_table_create_dabani_members_departments.php
+1.0.7:
+    - 'Created table dabani_members_trainings'
+    - builder_table_create_dabani_members_trainings.php
+1.0.8:
+    - 'Created table dabani_members_professions'
+    - builder_table_create_dabani_members_professions.php
+1.0.9:
+    - 'Created table dabani_members_profile'
+    - builder_table_create_dabani_members_profile.php
+1.0.10:
+    - 'Updated table dabani_members_profile'
+    - builder_table_update_dabani_members_profiles.php
+1.0.11:
+    - 'Created table dabani_members_studies'
+    - builder_table_create_dabani_members_studies.php
+1.0.12:
+    - 'Created table dabani_members_coachings'
+    - builder_table_create_dabani_members_coachings.php
+1.0.13:
+    - 'Created table dabani_members_careers'
+    - builder_table_create_dabani_members_careers.php
+1.0.14:
+    - 'Created table dabani_members_contacts'
+    - builder_table_create_dabani_members_contacts.php
+1.0.15:
+    - 'Created table dabani_members_networks'
+    - builder_table_create_dabani_members_networks.php
+1.0.16:
+    - 'Updated table dabani_members_networks'
+    - builder_table_update_dabani_members_networks.php
+1.0.17:
+    - 'Created table dabani_members_scoutings'
+    - builder_table_create_dabani_members_scoutings.php
+1.0.18:
+    - 'Created table dabani_members_memberships'
+    - builder_table_create_dabani_members_memberships.php
+1.0.19:
+    - 'Created table dabani_members_committees'
+    - builder_table_create_dabani_members_committees.php
+1.0.20:
+    - 'Updated table dabani_members_committees'
+    - builder_table_update_dabani_members_committees.php
+1.0.21:
+    - 'Created table dabani_members_commissions'
+    - builder_table_create_dabani_members_commissions.php
+1.0.22:
+    - 'Created table dabani_members_positions'
+    - builder_table_create_dabani_members_positions.php
+1.0.23:
+    - 'Created table dabani_members_committees_members'
+    - builder_table_create_dabani_members_committees_members.php
+1.0.24:
+    - 'Updated table dabani_members_committees_members'
+    - builder_table_update_dabani_members_directors.php
+1.0.25:
+    - 'Created table dabani_members_commissions_members'
+    - builder_table_create_dabani_members_commissions_members.php
+1.0.26:
+    - 'Created table dabani_members_causes'
+    - builder_table_create_dabani_members_causes.php
+1.0.27:
+    - 'Created table dabani_members_events'
+    - builder_table_create_dabani_members_events.php
+1.0.28:
+    - 'Updated table dabani_members_events'
+    - builder_table_update_dabani_members_events.php
+1.0.29:
+    - 'Created table dabani_members_attendances'
+    - builder_table_create_dabani_members_attendances.php
+1.0.30:
+    - 'Created table dabani_members_contributions'
+    - builder_table_create_dabani_members_contributions.php
+1.0.31:
+    - 'Updated table dabani_members_contributions'
+    - builder_table_update_dabani_members_contributions.php
+1.0.32:
+    - 'Updated table dabani_members_contributions'
+    - builder_table_update_dabani_members_contributions_2.php
+1.0.33:
+    - 'Updated table dabani_members_attendances'
+    - builder_table_update_dabani_members_events_members.php
+1.0.34:
+    - 'Updated table dabani_members_'
+    - builder_table_update_dabani_members_.php
+1.0.35:
+    - 'Created table dabani_members_skills'
+    - builder_table_create_dabani_members_skills.php
+1.0.36:
+    - 'Created table dabani_members_skills_members'
+    - builder_table_create_dabani_members_skills_members.php

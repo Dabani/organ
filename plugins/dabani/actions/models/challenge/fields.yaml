@@ -1,0 +1,30 @@
+fields:
+    name:
+        label: Challenge
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    task:
+        label: Task
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    description:
+        label: Description
+        size: tiny
+        span: right
+        type: richeditor
+    status:
+        label: Status
+        span: left
+        type: switch

@@ -1,0 +1,30 @@
+fields:
+    name:
+        label: Name
+        span: left
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: tiny
+        span: left
+        type: richeditor
+    status:
+        label: Status
+        span: right
+        type: switch
+    members:
+        label: Relation
+        span: left
+        nameFrom: name
+        descriptionFrom: description
+        select: 'concat(first_name,'' '',last_name)'
+        type: relation

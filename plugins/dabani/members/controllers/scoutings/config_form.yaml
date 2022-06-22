@@ -1,0 +1,10 @@
+name: Scoutings
+form: $/dabani/members/models/scouting/fields.yaml
+modelClass: Dabani\Members\Models\Scouting
+defaultRedirect: dabani/members/scoutings
+create:
+    redirect: 'dabani/members/scoutings/update/:id'
+    redirectClose: dabani/members/scoutings
+update:
+    redirect: dabani/members/scoutings
+    redirectClose: dabani/members/scoutings

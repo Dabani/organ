@@ -1,0 +1,474 @@
+title = "Member"
+url = "/member/:id"
+layout = "default"
+description = "Member details"
+is_hidden = 0
+==
+<?php
+use Db;
+use Auth;
+use Dabani\Members\Models\Member;
+use Dabani\Members\Models\Profile;
+use Dabani\Members\Models\Scouting;
+use Dabani\Members\Models\Contact;
+use Dabani\Members\Models\Network;
+use Dabani\Members\Models\Membership;
+use Dabani\Members\Models\Contribution;
+
+public function onStart(){
+  // Get current user
+  if (!Auth::check()) {
+    return null;
+  }
+  $user_id = Auth::getUser()->id;
+
+  // Get current allowed user groups
+  $this['groups'] = Db::table('user_groups')
+    ->join('users_groups','user_groups.id','=','users_groups.user_group_id')
+    ->select('user_groups.code')
+    ->where('users_groups.user_id',$user_id)
+    ->where('user_groups.code', 'board')
+    ->get();
+
+  // Get member details
+  $this['member'] = Member::where('id', $this -> param('id'))
+    ->where('status', 1)
+    ->first();
+
+  // Get member profile
+  $this['profile'] = Profile::where('member_id', $this -> param('id'))
+    ->where('status', 1)
+    ->first();
+
+  // Get Studies
+  $this['studies'] = Db::table('dabani_members_studies')
+    ->join('dabani_members_levels','dabani_members_levels.id','=','dabani_members_studies.level_id')
+    ->select('dabani_members_studies.*' )
+    ->where('dabani_members_studies.member_id',$this -> param('id'))
+    ->where('dabani_members_studies.status', 1)
+    ->get();
+
+  // Get Trainings
+  $this['trainings'] = Db::table('dabani_members_coachings')
+    ->join('dabani_members_trainings','dabani_members_trainings.id','=','dabani_members_coachings.training_id')
+    ->select('dabani_members_coachings.*' )
+    ->where('dabani_members_coachings.member_id',$this -> param('id'))
+    ->where('dabani_members_coachings.status', 1)
+    ->get();
+
+  // Get Jobs
+  $this['jobs'] = Db::table('dabani_members_careers')
+    ->join('dabani_members_professions','dabani_members_professions.id','=','dabani_members_careers.profession_id')
+    ->select('dabani_members_careers.*' )
+    ->where('dabani_members_careers.member_id',$this -> param('id'))
+    ->where('dabani_members_careers.status', 1)
+    ->get();
+
+  // Get scouting background
+  $this['scouting'] = Scouting::where('member_id', $this -> param('id'))
+    ->where('status', 1)
+    ->first();
+
+  // Get member contact
+  $this['contact'] = Contact::where('member_id', $this -> param('id'))
+    ->where('status', 1)
+    ->first();
+
+  // Get Social Media
+  $this['media'] = Network::where('member_id',$this -> param('id'))
+    ->where('status', 1)
+    ->get();
+
+  // Get membership info
+  $this['membership'] = Membership::where('member_id', $this -> param('id'))
+    ->where('status', 1)
+    ->first();
+
+  // Get Member Committees
+  $this['committees'] = Db::table('dabani_members_directors')
+    ->join('dabani_members_committees','dabani_members_committees.id','=','dabani_members_directors.committee_id')
+    ->join('dabani_members_positions','dabani_members_positions.id','=','dabani_members_directors.position_id')
+    ->select('dabani_members_directors.*','dabani_members_committees.name AS committee','dabani_members_positions.name AS position' )
+    ->where('dabani_members_directors.member_id',$this -> param('id'))
+    ->get();
+
+  // Get Member Commissions
+  $this['commissions'] = Db::table('dabani_members_commissions_members')
+    ->join('dabani_members_commissions','dabani_members_commissions.id','=','dabani_members_commissions_members.commission_id')
+    ->join('dabani_members_positions','dabani_members_positions.id','=','dabani_members_commissions_members.position_id')
+    ->select('dabani_members_commissions_members.*','dabani_members_commissions.name AS commission','dabani_members_positions.name AS position' )
+    ->where('dabani_members_commissions_members.member_id',$this -> param('id'))
+    ->get();
+
+  // Get Member Contributions
+  $this['contributions'] = Db::table('dabani_members_contributions')
+    ->join('dabani_members_events','dabani_members_events.id','=','dabani_members_contributions.event_id')
+    ->join('dabani_members_causes','dabani_members_causes.id','=','dabani_members_contributions.cause_id')
+    ->select('dabani_members_contributions.*','dabani_members_events.name AS event','dabani_members_causes.name AS cause' )
+    ->where('dabani_members_contributions.member_id',$this -> param('id'))
+    ->get();
+
+  // Get Member Contributions Total
+  $this['total'] = Db::table('dabani_members_contributions')
+    ->where('member_id', $this -> param('id'))
+    ->sum('amount');
+
+  // Get Member Contributions Average
+  $this['average'] = Db::table('dabani_members_contributions')
+    ->where('member_id', $this -> param('id'))
+    ->avg('amount');
+
+  // Get Member Contributions Counter
+  $this['counter'] = Db::table('dabani_members_contributions')
+    ->where('member_id', $this -> param('id'))
+    ->count();
+
+  // Get All Contributions Counter
+  $this['all_contributions'] = Db::table('dabani_members_contributions')
+    ->where('status', 1)
+    ->count();
+
+  // Get Member Attendancies
+  $this['attendances'] = Db::table('dabani_members_events_members')
+    ->join('dabani_members_events','dabani_members_events.id','=','dabani_members_events_members.event_id')
+    ->select('dabani_members_events_members.*','dabani_members_events.event_date AS event_date','dabani_members_events.name AS event','dabani_members_events.venue AS venue','dabani_members_events.time AS time')
+    ->where('dabani_members_events_members.member_id',$this -> param('id'))
+    ->orderBy('dabani_members_events.event_date','DESC')
+    ->get();
+}
+?>
+==
+
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h2 class="text-center">{{ member.last_name|upper }} {{ member.first_name }}</h2>
+      {% if groups|length > 0 or member.email == user.email %}
+        <div class="container">
+          <div class="d-flex align-items-start">
+            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link text-start active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true">Profile</button>
+              <button class="nav-link text-start" id="v-pills-education-tab" data-bs-toggle="pill" data-bs-target="#v-pills-education" type="button" role="tab" aria-controls="v-pills-education" aria-selected="false">Education</button>
+              <button class="nav-link text-start" id="v-pills-training-tab" data-bs-toggle="pill" data-bs-target="#v-pills-training" type="button" role="tab" aria-controls="v-pills-training" aria-selected="false">Trainings</button>
+              <button class="nav-link text-start" id="v-pills-jobs-tab" data-bs-toggle="pill" data-bs-target="#v-pills-jobs" type="button" role="tab" aria-controls="v-pills-jobs" aria-selected="false">Work Experience</button>
+              <button class="nav-link text-start" id="v-pills-scouting-tab" data-bs-toggle="pill" data-bs-target="#v-pills-scouting" type="button" role="tab" aria-controls="v-pills-scouting" aria-selected="false">Scouting</button>
+              <button class="nav-link text-start" id="v-pills-contact-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contact" type="button" role="tab" aria-controls="v-pills-contact" aria-selected="false">Contact</button>
+              <button class="nav-link text-start" id="v-pills-social-tab" data-bs-toggle="pill" data-bs-target="#v-pills-social" type="button" role="tab" aria-controls="v-pills-social" aria-selected="false">Social Media</button>
+              <button class="nav-link text-start" id="v-pills-membership-tab" data-bs-toggle="pill" data-bs-target="#v-pills-membership" type="button" role="tab" aria-controls="v-pills-membership" aria-selected="false">Membership</button>
+              <button class="nav-link text-start" id="v-pills-committees-tab" data-bs-toggle="pill" data-bs-target="#v-pills-committees" type="button" role="tab" aria-controls="v-pills-committees" aria-selected="false">Committees</button>
+              <button class="nav-link text-start" id="v-pills-commissions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-commissions" type="button" role="tab" aria-controls="v-pills-commissions" aria-selected="false">Commissions</button>
+              <button class="nav-link text-start" id="v-pills-contributions-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contributions" type="button" role="tab" aria-controls="v-pills-contributions" aria-selected="false">Contributions</button>
+              <button class="nav-link text-start" id="v-pills-attendancies-tab" data-bs-toggle="pill" data-bs-target="#v-pills-attendancies" type="button" role="tab" aria-controls="v-pills-attendancies" aria-selected="false">Attendancies</button>
+            </div>
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Profile</h3>
+                  <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                      {% if profile.poster %}
+                      <img src="{{ profile.poster.path }}" class="img-fluid rounded-circle img-thumbnail">
+                      {% else %}
+                      <img src="{{ 'assets/images/user-default.png'|theme }}" class="img-fluid rounded-circle img-thumbnail">
+                      {% endif %}
+
+                    </div>
+                    <div class="col-md-8 col-sm-6">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">First name</th>
+                            <td>{{ profile.profile.first_name }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Last name</th>
+                            <td>{{ profile.profile.last_name }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Nationality</th>
+                            <td>{{ profile.nationality.name }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Gender</th>
+                            <td>
+                            {% if profile.gender  %}
+                              {% if profile.gender == 'F' %}
+                                  Female
+                                {% else %}
+                                  Male
+                              {% endif %}
+                            {% endif %}
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Date of birth</th>
+                            <td>{{ profile.date_of_birth|date('d/m/Y') }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="v-pills-education" role="tabpanel" aria-labelledby="v-pills-education-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Education</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for study in studies %}
+                        <tr>
+                          <th scope="row">{{ study.from|date('d/m/Y') }} - {{ study.to|date('d/m/Y') }}</th>
+                          <td>{{ study.name }}</td>
+                          <td>{{ study.institution }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-training" role="tabpanel" aria-labelledby="v-pills-training-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Trainings</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for training in trainings %}
+                        <tr>
+                          <th scope="row">{{ training.from|date('d/m/Y') }} - {{ training.to|date('d/m/Y') }}</th>
+                          <td>{{ training.name }}</td>
+                          <td>{{ training.institution }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-jobs" role="tabpanel" aria-labelledby="v-pills-jobs-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Work Experience</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for job in jobs %}
+                        <tr>
+                          <th scope="row">{{ job.from|date('d/m/Y') }} - {{ job.to|date('d/m/Y') }}</th>
+                          <td>{{ job.name }}</td>
+                          <td>{{ job.institution }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-scouting" role="tabpanel" aria-labelledby="v-pills-scouting-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Scouting</h3>
+                  <div class="row">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Promise Date</th>
+                          <td>{{ scouting.promise_date|date('d/m/Y') }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Scout Unit Affiliation</th>
+                          <td>{{ scouting.unit_affiliation }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Totem Date</th>
+                          <td>{{ scouting.totem_date|date('d/m/Y') }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Totem</th>
+                          <td>{{ scouting.totem}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Contact</h3>
+                  <div class="row">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Country of Residence</th>
+                          <td>{{ contact.country.name }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Province</th>
+                          <td>{{ contact.province }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">City / District</th>
+                          <td>{{ contact.city }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">State / Sector</th>
+                          <td>{{ contact.village }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Village / Street</th>
+                          <td>{{ contact.street }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Email</th>
+                          <td>{{ contact.member.email }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Telephone</th>
+                          <td>{{ contact.telephone }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-social" role="tabpanel" aria-labelledby="v-pills-social-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Social Media</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for medium in media %}
+                        <tr>
+                          <th scope="row">{{ medium.name }}</th>
+                          <td><a href="{{ medium.url }}" target="_blank">{{ medium.social_media_id }}</a></td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-membership" role="tabpanel" aria-labelledby="v-pills-membership-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Membership</h3>
+                  <div class="row">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Member Since</th>
+                          <td>{{ membership.joined_at|date('d/m/Y') }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Matricule</th>
+                          <td>{{ membership.matricule }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-committees" role="tabpanel" aria-labelledby="v-pills-committees-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Committee Background</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for committee in committees %}
+                        <tr>
+                          <th scope="row">{{ committee.from|date('d/m/Y') }} - {{ committee.to|date('d/m/Y') }}</th>
+                          <td>{{ committee.committee }}</td>
+                          <td>{{ committee.position }}</td>
+                          <td>
+                            {% if committee.to|date('Y-m-d') < 'now'|date('Y-m-d') %}
+                              <span class="text-danger">Terminated</span>
+                            {% else %}
+                              {% if committee.status == 0 %}
+                                <span class="text-warning">Suspended</span>
+                              {% else %}
+                                <span class="text-success">Active</span>
+                              {% endif %}
+                            {% endif %}
+                          </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-commissions" role="tabpanel" aria-labelledby="v-pills-commissions-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Commission Background</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for commission in commissions %}
+                        <tr>
+                          <th scope="row">{{ commission.from|date('d/m/Y') }} - {{ commission.to|date('d/m/Y') }}</th>
+                          <td>{{ commission.commission }}</td>
+                          <td>{{ commission.position }}</td>
+                          <td>
+                            {% if commission.to|date('Y-m-d') < 'now'|date('Y-m-d') %}
+                              <span class="text-danger">Terminated</span>
+                            {% else %}
+                              {% if commission.status == 0 %}
+                                <span class="text-warning">Suspended</span>
+                              {% else %}
+                                <span class="text-success">Active</span>
+                              {% endif %}
+                            {% endif %}
+                          </td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-contributions" role="tabpanel" aria-labelledby="v-pills-contributions-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Contributions</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for contribution in contributions %}
+                        <tr>
+                          <th scope="row">{{ contribution.date_of_contribution|date('d/m/Y') }}</th>
+                          <td>{{ contribution.event }}</td>
+                          <td>{{ contribution.cause }}</td>
+                          <td>{{ contribution.amount|number_format(2, '.', ',') }}</td>
+                          <td>{{ contribution.currency }}</td>
+                        </tr>
+                      {% endfor %}
+                      <tr>
+                        <th scope="row">Count of contributions</th>
+                        <td colspan="4" class="text-end text-primary">{{ counter }}/{{ all_contributions }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Average of contributions</th>
+                        <td colspan="4" class="text-end text-primary">{{ average|number_format(2, '.', ',') }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Total contributions</th>
+                        <td colspan="4" class="text-end text-primary">{{ total|number_format(2, '.', ',') }}</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="v-pills-attendancies" role="tabpanel" aria-labelledby="v-pills-attendancies-tab" tabindex="0">
+                <div class="container">
+                  <h3 class="text-center">Events Attendance</h3>
+                  <table class="table">
+                      <tbody>
+                      {% for attendance in attendances %}
+                        <tr>
+                          <th scope="row">{{ attendance.event_date|date('d/m/Y') }}</th>
+                          <td>{{ attendance.event }}</td>
+                          <td>{{ attendance.venue }}</td>
+                          <td>{{ attendance.time|date('H:i') }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <p class="text-danger">
+          Sorry, you don't have sufficient right to display this page details!
+          <br>Please contact RASAL Admin!
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>

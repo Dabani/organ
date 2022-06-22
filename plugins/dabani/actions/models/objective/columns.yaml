@@ -1,0 +1,29 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    activity_id:
+        label: Activity
+        type: number
+        searchable: true
+        sortable: true
+        select: name
+        relation: activity
+    name:
+        label: Objective
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: text
+        searchable: false
+        sortable: true
+    indicators:
+        label: Indicators
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: indicators

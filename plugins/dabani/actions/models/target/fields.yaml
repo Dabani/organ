@@ -1,0 +1,50 @@
+fields:
+  name:
+    label: Target
+    span: left
+    required: 1
+    type: text
+  slug:
+    label: Slug
+    span: right
+    required: 1
+    preset:
+      field: name
+      type: slug
+    type: text
+  objective:
+    label: Objective
+    nameFrom: name
+    descriptionFrom: description
+    span: left
+    required: 1
+    type: relation
+  description:
+    label: Description
+    size: tiny
+    span: right
+    type: richeditor
+  measure:
+    label: Measurement
+    span: left
+    required: 1
+    type: text
+  unity:
+    label: "Measurement Unity"
+    span: right
+    required: 1
+    type: text
+  expected:
+    label: Expected
+    span: left
+    required: 1
+    type: number
+  released:
+    label: Released
+    span: right
+    required: 1
+    type: number
+  status:
+    label: Status
+    span: left
+    type: switch

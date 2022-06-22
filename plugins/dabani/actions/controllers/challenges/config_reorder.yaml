@@ -1,0 +1,4 @@
+title: Challenges
+modelClass: Dabani\Actions\Models\Challenge
+toolbar:
+    buttons: reorder_toolbar

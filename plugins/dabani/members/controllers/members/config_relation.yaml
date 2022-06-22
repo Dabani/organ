@@ -1,0 +1,99 @@
+profile:
+  label: Profile
+  manage:
+    form: $\dabani\members\models\profile\fields.yaml
+    list: $\dabani\members\models\profile\columns.yaml
+  view:
+    list: $\dabani\members\models\profile\columns.yaml
+    form: $\dabani\members\models\profile\fields.yaml
+    toolbarButtons: update|delete
+studies:
+  label: Education
+  manage:
+    form: $\dabani\members\models\study\fields.yaml
+    list: $\dabani\members\models\study\columns.yaml
+  view:
+    list: $\dabani\members\models\study\columns.yaml
+coachings:
+  label: Training
+  manage:
+    form: $\dabani\members\models\coaching\fields.yaml
+    list: $\dabani\members\models\coaching\columns.yaml
+  view:
+    list: $\dabani\members\models\coaching\columns.yaml
+skills:
+  label: Skill
+  manage:
+    form: $\dabani\members\models\skill\fields.yaml
+    list: $\dabani\members\models\skill\columns.yaml
+  view:
+    list: $\dabani\members\models\skill\columns.yaml
+careers:
+  label: Job
+  manage:
+    form: $\dabani\members\models\career\fields.yaml
+    list: $\dabani\members\models\career\columns.yaml
+  view:
+    list: $\dabani\members\models\career\columns.yaml
+scouting:
+  label: Scouting
+  manage:
+    form: $\dabani\members\models\scouting\fields.yaml
+    list: $\dabani\members\models\scouting\columns.yaml
+  view:
+    list: $\dabani\members\models\scouting\columns.yaml
+    form: $\dabani\members\models\scouting\fields.yaml
+    toolbarButtons: update|delete
+contact:
+  label: Contact
+  manage:
+    form: $\dabani\members\models\contact\fields.yaml
+    list: $\dabani\members\models\contact\columns.yaml
+  view:
+    list: $\dabani\members\models\contact\columns.yaml
+    form: $\dabani\members\models\contact\fields.yaml
+    toolbarButtons: update|delete
+networks:
+  label: Social Media
+  manage:
+    form: $\dabani\members\models\network\fields.yaml
+    list: $\dabani\members\models\network\columns.yaml
+  view:
+    list: $\dabani\members\models\network\columns.yaml
+membership:
+  label: Membership
+  manage:
+    form: $\dabani\members\models\membership\fields.yaml
+    list: $\dabani\members\models\membership\columns.yaml
+  view:
+    list: $\dabani\members\models\membership\columns.yaml
+    form: $\dabani\members\models\membership\fields.yaml
+    toolbarButtons: update|delete
+directors:
+  label: Committee
+  manage:
+    form: $\dabani\members\models\director\fields.yaml
+    list: $\dabani\members\models\director\columns.yaml
+  view:
+    list: $\dabani\members\models\director\columns.yaml
+commissions:
+  label: Commission
+  manage:
+    form: $\dabani\members\models\commissionMember\fields.yaml
+    list: $\dabani\members\models\commissionMember\columns.yaml
+  view:
+    list: $\dabani\members\models\commissionMember\columns.yaml
+contributions:
+  label: Contribution
+  manage:
+    form: $\dabani\members\models\contribution\fields.yaml
+    list: $\dabani\members\models\contribution\columns.yaml
+  view:
+    list: $\dabani\members\models\contribution\columns.yaml
+events:
+  label: Attendance
+  manage:
+    form: $\dabani\members\models\event\fields.yaml
+    list: $\dabani\members\models\event\columns.yaml
+  view:
+    list: $\dabani\members\models\event\columns.yaml

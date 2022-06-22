@@ -1,0 +1,10 @@
+name: MaterialTasks
+form: $/dabani/actions/models/materialtask/fields.yaml
+modelClass: Dabani\Actions\Models\MaterialTask
+defaultRedirect: dabani/actions/materialtasks
+create:
+    redirect: 'dabani/actions/materialtasks/update/:id'
+    redirectClose: dabani/actions/materialtasks
+update:
+    redirect: dabani/actions/materialtasks
+    redirectClose: dabani/actions/materialtasks

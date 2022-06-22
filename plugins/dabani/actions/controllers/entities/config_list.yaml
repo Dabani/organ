@@ -1,0 +1,12 @@
+list: $/dabani/actions/models/entity/columns.yaml
+modelClass: Dabani\Actions\Models\Entity
+title: Entities
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dabani/actions/entities/update/:id'

@@ -1,0 +1,22 @@
+goals:
+  label: Goal
+  manage:
+    form: $\dabani\actions\models\goal\fields.yaml
+    list: $\dabani\actions\models\goal\columns.yaml
+  view:
+    list: $\dabani\actions\models\goal\columns.yaml
+objectives:
+  label: Objective
+  manage:
+    form: $\dabani\actions\models\objective\fields.yaml
+    list: $\dabani\actions\models\objective\columns.yaml
+  view:
+    list: $\dabani\actions\models\objective\columns.yaml
+tasks:
+  label: Task
+  manage:
+    form: $\dabani\actions\models\task\fields.yaml
+    list: $\dabani\actions\models\task\columns.yaml
+  view:
+    list: $\dabani\actions\models\task\columns.yaml
+

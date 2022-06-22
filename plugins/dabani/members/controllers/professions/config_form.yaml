@@ -1,0 +1,10 @@
+name: Professions
+form: $/dabani/members/models/profession/fields.yaml
+modelClass: Dabani\Members\Models\Profession
+defaultRedirect: dabani/members/professions
+create:
+    redirect: 'dabani/members/professions/update/:id'
+    redirectClose: dabani/members/professions
+update:
+    redirect: dabani/members/professions
+    redirectClose: dabani/members/professions

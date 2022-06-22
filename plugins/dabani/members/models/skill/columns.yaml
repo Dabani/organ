@@ -1,0 +1,16 @@
+columns:
+    name:
+        label: Skill
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true
+    members:
+        label: Members
+        type: text
+        sortable: true
+        select: 'concat(first_name,'' '',last_name)'
+        relation: members

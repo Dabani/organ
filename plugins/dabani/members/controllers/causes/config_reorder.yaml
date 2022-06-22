@@ -1,0 +1,4 @@
+title: Causes
+modelClass: Dabani\Members\Models\Cause
+toolbar:
+    buttons: reorder_toolbar

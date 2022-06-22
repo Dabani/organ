@@ -1,0 +1,10 @@
+name: Targets
+form: $/dabani/actions/models/target/fields.yaml
+modelClass: Dabani\Actions\Models\Target
+defaultRedirect: dabani/actions/targets
+create:
+    redirect: 'dabani/actions/targets/update/:id'
+    redirectClose: dabani/actions/targets
+update:
+    redirect: dabani/actions/targets
+    redirectClose: dabani/actions/targets

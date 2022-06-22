@@ -1,0 +1,4 @@
+title: Contributions
+modelClass: Dabani\Members\Models\Contribution
+toolbar:
+    buttons: reorder_toolbar

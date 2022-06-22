@@ -1,0 +1,90 @@
+title = "Members"
+url = "/members"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+allowedUserGroups[] = "rasal"
+redirect = "auth/login"
+==
+<?php
+use Db;
+use Auth;
+
+function onStart() {
+  // Get current user
+  if (!Auth::check()) {
+    return null;
+  }
+  $user = Auth::getUser()->email;
+  $user_id = Auth::getUser()->id;
+
+  // Get current user groups
+  $this['groups'] = Db::table('user_groups')
+    ->join('users_groups','user_groups.id','=','users_groups.user_group_id')
+    ->select('user_groups.*')
+    ->where('users_groups.user_id',$user_id)
+    ->get();
+
+  // Get member details
+  $this['details'] = Db::table('dabani_members_')
+    ->join('users','users.email','=','dabani_members_.email')
+    ->select('dabani_members_.*')
+    ->where('status', 1)
+    ->where('dabani_members_.email', $user)
+    ->get();
+
+  // Get all active members details
+  $this['members'] = Db::table('dabani_members_')
+    ->join('users','users.email','=','dabani_members_.email')
+    ->select('dabani_members_.*')
+    ->where('status', 1)
+    ->orderBy('last_name')
+    ->get();
+}
+?>
+==
+<div class="container mt-4">
+  {% if user %}
+  <div class="row">
+    <h3>Hello {{ user.name }}, welcome to RASAL members' space!</h3>
+  </div>
+  {% endif %}
+  <div class="row">
+    {# main column #}
+    <div class="col-md-9 my-3">
+      {% if details|length > 0 %}
+      <ul>
+        {% for detail in details %}
+        <li>
+          <strong>{{ detail.first_name }} {{ detail.last_name }}</strong>
+          {# get member groups if exist #}
+          {% if groups|length > 0 %}
+          <div>
+            <ul>
+              {% for group in groups %}
+              <li>{{ group.description }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    {# right column #}
+    <div class="col-md-3 my-3">
+      {% if members|length > 0 %}
+      <ul>
+        {% for member in members %}
+        <li><a href="member/{{ member.id }}">{{ member.last_name|upper }} {{ member.first_name }}</a> </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      
+    </div>
+  </div>
+</div>

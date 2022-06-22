@@ -1,0 +1,21 @@
+indicators:
+  label: Indicator
+  manage:
+    form: $\dabani\actions\models\indicator\fields.yaml
+    list: $\dabani\actions\models\indicator\columns.yaml
+  view:
+    list: $\dabani\actions\models\indicator\columns.yaml
+targets:
+  label: Target
+  manage:
+    form: $\dabani\actions\models\target\fields.yaml
+    list: $\dabani\actions\models\target\columns.yaml
+  view:
+    list: $\dabani\actions\models\target\columns.yaml
+tasks:
+  label: Task
+  manage:
+    form: $\dabani\actions\models\task\fields.yaml
+    list: $\dabani\actions\models\task\columns.yaml
+  view:
+    list: $\dabani\actions\models\task\columns.yaml

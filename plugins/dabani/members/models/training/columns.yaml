@@ -1,0 +1,15 @@
+columns:
+  name:
+    label: Title
+    type: text
+    searchable: true
+    sortable: true
+  award:
+    label: Award
+    type: text
+    searchable: true
+    sortable: true
+  status:
+    label: Status
+    type: switch
+    sortable: true

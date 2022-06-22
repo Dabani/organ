@@ -1,0 +1,10 @@
+name: Coachings
+form: $/dabani/members/models/coaching/fields.yaml
+modelClass: Dabani\Members\Models\Coaching
+defaultRedirect: dabani/members/coachings
+create:
+    redirect: 'dabani/members/coachings/update/:id'
+    redirectClose: dabani/members/coachings
+update:
+    redirect: dabani/members/coachings
+    redirectClose: dabani/members/coachings

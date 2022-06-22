@@ -1,0 +1,10 @@
+name: Objectives
+form: $/dabani/actions/models/objective/fields.yaml
+modelClass: Dabani\Actions\Models\Objective
+defaultRedirect: dabani/actions/objectives
+create:
+    redirect: 'dabani/actions/objectives/update/:id'
+    redirectClose: dabani/actions/objectives
+update:
+    redirect: dabani/actions/objectives
+    redirectClose: dabani/actions/objectives

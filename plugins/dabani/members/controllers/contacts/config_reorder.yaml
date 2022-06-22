@@ -1,0 +1,4 @@
+title: Contacts
+modelClass: Dabani\Members\Models\Contact
+toolbar:
+    buttons: reorder_toolbar

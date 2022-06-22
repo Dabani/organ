@@ -1,0 +1,15 @@
+columns:
+    name:
+        label: 'Committee Title'
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true
+    mandate:
+        label: Mandate
+        type: text
+        searchable: true
+        sortable: true

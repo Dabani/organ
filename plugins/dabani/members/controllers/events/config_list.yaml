@@ -1,0 +1,12 @@
+list: $/dabani/members/models/event/columns.yaml
+modelClass: Dabani\Members\Models\Event
+title: Events
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dabani/members/events/update/:id'

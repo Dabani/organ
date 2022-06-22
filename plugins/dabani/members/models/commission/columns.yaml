@@ -1,0 +1,10 @@
+columns:
+    name:
+        label: Commission
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

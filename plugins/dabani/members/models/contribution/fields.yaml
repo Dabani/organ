@@ -1,0 +1,48 @@
+fields:
+    event:
+        label: Event
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    cause:
+        label: 'Type of Contribution'
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        required: 1
+        type: relation
+    member:
+        label: 'Full Name'
+        span: left
+        nameFrom: name
+        descriptionFrom: description
+        required: 1
+        select: 'concat(first_name,'' '',last_name)'
+        type: relation
+    amount:
+        label: Amount
+        span: right
+        required: 1
+        type: number
+    currency:
+        label: Currency
+        span: left
+        required: 1
+        type: text
+    date_of_contribution:
+        label: 'Date of Contribution'
+        mode: date
+        span: right
+        required: 1
+        type: datepicker
+    description:
+        label: Description
+        size: tiny
+        span: right
+        type: richeditor
+    status:
+        label: Status
+        span: left
+        type: switch

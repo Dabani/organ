@@ -1,0 +1,4 @@
+title: CommissionsMembers
+modelClass: Dabani\Members\Models\CommissionMember
+toolbar:
+    buttons: reorder_toolbar

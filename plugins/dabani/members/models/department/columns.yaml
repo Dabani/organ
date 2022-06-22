@@ -1,0 +1,17 @@
+columns:
+    name:
+        label: Department
+        type: text
+        searchable: true
+        sortable: true
+    field_id:
+        label: 'Field of Education'
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: field
+    status:
+        label: Status
+        type: switch
+        sortable: true

@@ -1,0 +1,33 @@
+columns:
+    member_id:
+        label: 'Full Name'
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name, " ", last_name)'
+        relation: profile
+    gender:
+        label: Gender
+        type: text
+        searchable: true
+        sortable: true
+    country_id:
+        label: Nationality
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: nationality
+    date_of_birth:
+        label: 'Date of Birth'
+        type: text
+        sortable: true
+    place_of_birth:
+        label: 'Place of Birth'
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

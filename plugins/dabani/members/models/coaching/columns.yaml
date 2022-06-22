@@ -1,0 +1,40 @@
+columns:
+    member_id:
+        label: Member
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name, " ", last_name)'
+        relation: member
+    training_id:
+        label: Training
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: training
+    name:
+        label: Title
+        type: text
+        searchable: true
+        sortable: true
+    from:
+        label: Starting
+        type: date
+        searchable: true
+        sortable: true
+    to:
+        label: Ending
+        type: date
+        searchable: true
+        sortable: true
+    institution:
+        label: Institution
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        searchable: false
+        sortable: true

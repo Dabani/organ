@@ -1,0 +1,4 @@
+title: Fields
+modelClass: Dabani\Members\Models\Field
+toolbar:
+    buttons: reorder_toolbar

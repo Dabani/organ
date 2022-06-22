@@ -1,0 +1,4 @@
+title: Memberships
+modelClass: Dabani\Members\Models\Membership
+toolbar:
+    buttons: reorder_toolbar

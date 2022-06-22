@@ -1,0 +1,4 @@
+title: Objectives
+modelClass: Dabani\Actions\Models\Objective
+toolbar:
+    buttons: reorder_toolbar

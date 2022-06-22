@@ -1,0 +1,27 @@
+columns:
+    member_id:
+        label: 'Full name'
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name, " ", last_name)'
+        relation: member
+    name:
+        label: 'Social Media Name'
+        type: text
+        searchable: true
+        sortable: true
+    social_media_id:
+        label: 'Social Media ID'
+        type: text
+        searchable: true
+        sortable: true
+    url:
+        label: Link
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

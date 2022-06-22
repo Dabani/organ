@@ -1,0 +1,12 @@
+list: $/dabani/members/models/commissionmember/columns.yaml
+modelClass: Dabani\Members\Models\CommissionMember
+title: CommissionsMembers
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dabani/members/commissionsmembers/update/:id'

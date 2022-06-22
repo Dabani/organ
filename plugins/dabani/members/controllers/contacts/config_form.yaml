@@ -1,0 +1,10 @@
+name: Contacts
+form: $/dabani/members/models/contact/fields.yaml
+modelClass: Dabani\Members\Models\Contact
+defaultRedirect: dabani/members/contacts
+create:
+    redirect: 'dabani/members/contacts/update/:id'
+    redirectClose: dabani/members/contacts
+update:
+    redirect: dabani/members/contacts
+    redirectClose: dabani/members/contacts

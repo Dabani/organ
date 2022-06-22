@@ -1,0 +1,24 @@
+columns:
+    name:
+        label: Event
+        type: text
+        searchable: true
+        sortable: true
+    event_date:
+        label: Date
+        type: date
+        searchable: true
+        sortable: true
+    time:
+        label: Time
+        type: time
+        sortable: true
+    venue:
+        label: Venue
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

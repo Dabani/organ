@@ -1,0 +1,4 @@
+title: Events
+modelClass: Dabani\Members\Models\Event
+toolbar:
+    buttons: reorder_toolbar

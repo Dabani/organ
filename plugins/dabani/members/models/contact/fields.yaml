@@ -1,0 +1,40 @@
+fields:
+    member:
+        label: 'Full name'
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        select: 'concat(first_name, " ", last_name)'
+        type: relation
+    country:
+        label: 'Country of Residence'
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        type: relation
+    province:
+        label: Province
+        span: left
+        type: text
+    city:
+        label: City
+        span: right
+        type: text
+    village:
+        label: Village
+        span: left
+        type: text
+    street:
+        label: Street
+        span: right
+        type: text
+    telephone:
+        label: Telephone
+        span: left
+        required: 1
+        type: text
+    status:
+        label: Status
+        span: right
+        type: switch

@@ -1,0 +1,10 @@
+name: Contributions
+form: $/dabani/members/models/contribution/fields.yaml
+modelClass: Dabani\Members\Models\Contribution
+defaultRedirect: dabani/members/contributions
+create:
+    redirect: 'dabani/members/contributions/update/:id'
+    redirectClose: dabani/members/contributions
+update:
+    redirect: dabani/members/contributions
+    redirectClose: dabani/members/contributions

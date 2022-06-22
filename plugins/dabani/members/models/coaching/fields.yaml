@@ -1,0 +1,53 @@
+fields:
+    member:
+        label: 'Full name'
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        select: 'concat(first_name, " ", last_name)'
+        type: relation
+    training:
+        label: Training
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        required: 1
+        type: relation
+    name:
+        label: Title
+        span: left
+        placeholder: 'Title of the training'
+        required: 1
+        type: text
+    institution:
+        label: Institution
+        span: right
+        placeholder: 'Name of the institution providing the training'
+        required: 1
+        type: text
+    description:
+        label: Description
+        size: small
+        span: left
+        placeholder: 'Short description of the content of the training'
+        type: richeditor
+    from:
+        label: From
+        mode: date
+        format: '"d-m-Y"'
+        span: auto
+        placeholder: 'Date of the starting'
+        required: 1
+        type: datepicker
+    to:
+        label: To
+        mode: date
+        span: auto
+        placeholder: 'Date of  the end of the training'
+        required: 1
+        type: datepicker
+    status:
+        label: Status
+        span: auto
+        type: switch

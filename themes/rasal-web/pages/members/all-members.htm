@@ -1,0 +1,13 @@
+title = "All members"
+url = "/all-members"
+layout = "default"
+is_hidden = 0
+
+[associates]
+
+[session]
+security = "user"
+allowedUserGroups[] = "rasal"
+redirect = "auth/login"
+==
+{% component 'associates' %}

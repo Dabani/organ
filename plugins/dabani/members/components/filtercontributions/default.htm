@@ -1,0 +1,135 @@
+{% set contributions = __SELF__.contributions %}
+{% set total = __SELF__.total %}
+{% set average = __SELF__.average %}
+{% set counter = __SELF__.counter %}
+{% set minimum = __SELF__.minimum %}
+{% set maximum = __SELF__.maximum %}
+{% set contributors = __SELF__.contributors %}
+{% set types = __SELF__.types %}
+{% set descriptions = __SELF__.descriptions %}
+{% set years = __SELF__.years %}
+<div class="container-fluid my-4">
+  <div class="row">
+    <div class="col-md-2 col-sm-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-warning">
+          <h3 class="card-title">Filter</h3>
+        </div>
+        <div class="card-body">
+          <form method="GET" action="{{ url('filter-contributions') }}">
+            <div class="form-group mb-3">
+              <label for="contributor" class="form-label">Contributor</label>
+              <select class="form-select" name="contributor">
+                <option value="">All</option>
+                {% for contributor in contributors %}
+                <option value="{{ contributor.id }}">{{ contributor.last_name|upper }} {{ contributor.first_name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="type" class="form-label">Type</label>
+              <select class="form-select" name="type">
+                <option value="">All</option>
+                {% for type in types %}
+                <option value="{{ type.id }}">{{ type.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="description" class="form-label">Description</label>
+              <select class="form-select" name="description">
+                <option value="">All</option>
+                {% for description in descriptions %}
+                <option value="{{ description.id }}">{{ description.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="year" class="form-label">Year</label>
+              <select class="form-select" name="year">
+                <option value="">All</option>
+                {% for year in years %}
+                <option value="{{ year.year }}">{{ year.year }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <input class="btn btn-secondary" type="submit" value="Filter">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 col-sm-8">
+      <div class="card border-0 shadow-sm">
+
+          <div class="card-body text-center">
+            <h4 class="card-title font-weight-bold">
+              Contributions
+            </h4>
+
+            <hr />
+            {% if contributions|length > 0 %}
+            <table class="table table-sm table-striped w-100">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Full name</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Currency</th>
+                </tr>
+              </thead>
+              <tbody class="text-start">
+                {% for contribution in contributions %}
+                <tr>
+                  <th scope="row">{{ contribution.date_of_contribution|date('d/m/Y') }}</th>
+                  <td>{{ contribution.member.last_name|upper }} {{ contribution.member.first_name }}</td>
+                  <td>{{ contribution.event.name }}</td>
+                  <td>{{ contribution.cause.name }}</td>
+                  <td class="text-end">{{ contribution.amount|number_format(2, '.', ',') }}</td>
+                  <td>{{ contribution.currency }}</td>
+                </tr>
+                {% endfor %}
+
+                <tr>
+                  <th scope="row" colspan="4">Total contributions</th>
+                  <th class="text-end">{{ total|number_format(2, '.', ',') }}</th>
+                  <th>Rwf</th>
+                </tr>
+
+                <tr>
+                  <th scope="row" colspan="4">Average</th>
+                  <th class="text-end">{{ average|number_format(2, '.', ',') }}</th>
+                  <th>Rwf</th>
+                </tr>
+
+                <tr>
+                  <th scope="row" colspan="4">Minimum</th>
+                  <th class="text-end">{{ minimum|number_format(2, '.', ',') }}</th>
+                  <th>Rwf</th>
+                </tr>
+
+                <tr>
+                  <th scope="row" colspan="4">Maximum</th>
+                  <th class="text-end">{{ maximum|number_format(2, '.', ',') }}</th>
+                  <th>Rwf</th>
+                </tr>
+
+                <tr>
+                  <th scope="row" colspan="4">Countributions count</th>
+                  <th class="text-end">{{ counter|number_format(0, '.', ',') }}</th>
+                  <td></td>
+                </tr>
+
+              </tbody>
+            </table>
+            {% endif %}
+          </div>
+      </div>
+    </div>
+  </row>
+</div>

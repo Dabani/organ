@@ -1,0 +1,4 @@
+title: Goals
+modelClass: Dabani\Actions\Models\Goal
+toolbar:
+    buttons: reorder_toolbar

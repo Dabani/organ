@@ -1,0 +1,4 @@
+title: Coachings
+modelClass: Dabani\Members\Models\Coaching
+toolbar:
+    buttons: reorder_toolbar

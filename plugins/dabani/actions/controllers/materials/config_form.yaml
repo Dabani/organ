@@ -1,0 +1,10 @@
+name: Materials
+form: $/dabani/actions/models/material/fields.yaml
+modelClass: Dabani\Actions\Models\Material
+defaultRedirect: dabani/actions/materials
+create:
+    redirect: 'dabani/actions/materials/update/:id'
+    redirectClose: dabani/actions/materials
+update:
+    redirect: dabani/actions/materials
+    redirectClose: dabani/actions/materials

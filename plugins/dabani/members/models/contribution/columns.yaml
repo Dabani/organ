@@ -1,0 +1,36 @@
+columns:
+    event_id:
+        label: Event
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: event
+    cause_id:
+        label: 'Type of Contribution'
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: cause
+    member_id:
+        label: 'Full name'
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name,'' '',last_name)'
+        relation: member
+    amount:
+        label: Amount
+        type: number
+        searchable: true
+        sortable: true
+    currency:
+        label: Currency
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

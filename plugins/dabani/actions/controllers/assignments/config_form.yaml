@@ -1,0 +1,10 @@
+name: Assignments
+form: $/dabani/actions/models/assignment/fields.yaml
+modelClass: Dabani\Actions\Models\Assignment
+defaultRedirect: dabani/actions/assignments
+create:
+    redirect: 'dabani/actions/assignments/update/:id'
+    redirectClose: dabani/actions/assignments
+update:
+    redirect: dabani/actions/assignments
+    redirectClose: dabani/actions/assignments

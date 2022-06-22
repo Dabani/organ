@@ -1,0 +1,74 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    activity_id:
+        label: Activity
+        type: number
+        searchable: true
+        sortable: true
+        select: name
+        relation: activity
+    entity_id:
+        label: Entity
+        type: number
+        searchable: true
+        sortable: true
+        select: name
+        relation: entity
+    name:
+        label: Task
+        type: text
+        searchable: true
+        sortable: true
+    priority:
+        label: Priority
+        type: text
+        searchable: true
+        sortable: true
+    phase:
+        label: Phase
+        type: text
+        searchable: true
+        sortable: true
+    progress:
+        label: Progress
+        type: number
+        searchable: true
+        sortable: true
+    start:
+        label: Start
+        type: text
+        searchable: true
+        sortable: true
+    end:
+        label: End
+        type: text
+        searchable: true
+        sortable: true
+    duration:
+        label: Duration
+        type: number
+        searchable: true
+        sortable: true
+    unity:
+        label: Unity
+        type: text
+        searchable: true
+        sortable: true
+    cost:
+        label: Cost
+        type: number
+        searchable: true
+        sortable: true
+    currency:
+        label: currency
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        searchable: false
+        sortable: true

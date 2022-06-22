@@ -1,0 +1,121 @@
+fields:
+  name:
+    label: Task
+    span: left
+    required: 1
+    type: text
+  slug:
+    label: Slug
+    span: right
+    required: 1
+    preset:
+      field: name
+      type: slug
+    type: text
+  activity:
+    label: Activity
+    nameFrom: name
+    descriptionFrom: description
+    span: left
+    required: 1
+    type: relation
+  entity:
+    label: Entity
+    nameFrom: name
+    descriptionFrom: description
+    span: right
+    type: relation
+  description:
+    label: Description
+    size: tiny
+    span: left
+    type: richeditor
+  status:
+    label: Status
+    span: right
+    type: switch
+  priority:
+    label: Priority
+    options:
+      high: High
+      medium: Medium
+      low: Low
+    showSearch: true
+    span: right
+    required: 1
+    type: dropdown
+  phase:
+    label: Phase
+    options:
+      initiating: Initiating
+      planning: Planning
+      executing: Executing
+      monitoring: Monitoring
+      closing: Closing
+    showSearch: true
+    span: auto
+    required: 1
+    type: dropdown
+  progress:
+    label: Progress
+    span: auto
+    required: 1
+    type: number
+  start:
+    label: Start
+    mode: datetime
+    span: auto
+    required: 1
+    type: datepicker
+  end:
+    label: End
+    mode: datetime
+    span: auto
+    required: 1
+    type: datepicker
+  duration:
+    label: Duration
+    span: auto
+    required: 1
+    type: number
+  unity:
+    label: Unity
+    options:
+      hours: Hours
+      days: Days
+      weeks: Weeks
+      months: Months
+      years: Years
+    showSearch: true
+    span: auto
+    required: 1
+    type: dropdown
+  cost:
+    label: Cost
+    span: auto
+    required: 1
+    type: number
+  currency:
+    label: Currency
+    span: auto
+    showSearch: true
+    options:
+      rwf: "Rwandan Franks"
+      usd: "US Dollars"
+      euro: Euro
+      pound: Pound
+    type: dropdown
+  materials:
+    label: Materials
+    span: full
+    nameFrom: name
+    descriptionFrom: description
+    type: partial
+    path: field_material
+  challenges:
+    label: Challenges
+    span: full
+    nameFrom: name
+    descriptionFrom: description
+    type: partial
+    path: field_challenge

@@ -1,0 +1,81 @@
+description = "default site header"
+
+[viewBag]
+snippetCode = "site-header"
+snippetName = "Website Header"
+==
+<div class="container d-flex align-items-center">
+  <a class="logo me-auto me-lg-0" href="{{ '/' }}"
+    ><img
+      src="{{ 'assets/images/rasal.png'|theme }}"
+      alt=""
+      class="img-fluid fr-fic fr-dii"
+  /></a>
+  <nav class="navbar order-last order-lg-0" id="navbar">
+    <ul>
+      <li><a class="{% if this.page.id == "home" %}active{% endif %}" href="{{ 'home'|page }}">Home</a></li>
+      <li class="dropdown">
+        <a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li class="dropdown">
+            <a href="#"
+              ><span>Projects</span> <i class="bi bi-chevron-right"></i
+            ></a>
+
+            <ul>
+              <li><a href="#">Fellowship Program</a></li>
+              <li><a href="#">Sponsorship Program</a></li>
+              <li><a href="#">Research Program</a></li>
+            </ul>
+          </li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="team.html">Fellow Team</a></li>
+          <li><a href="team.html">Our Partners</a></li>
+          <li><a href="team.html">Achievements</a></li>
+          <li><a href="team.html">Gallery</a></li>
+          <li><a href="team.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#"
+          ><span>Get Involved</span> <i class="bi bi-chevron-down"></i
+        ></a>
+
+        <ul>
+          <li><a href="about.html">Make a donation</a></li>
+          <li><a href="team.html">Become a Fellow</a></li>
+          <li><a href="testimonials.html">Join RASAL Community</a></li>
+        </ul>
+      </li>
+      <li><a href="pricing.html">Events</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a class="{% if this.page.url == "/contact" %}active{% endif %}" href="{{ 'contact'|page }}">Contact</a></li>
+      {% if user %}
+      <li><a class="{% if this.page.id == "members-members" or this.page.id == "members-member" or this.page.id == "members-all-members" or this.page.id == "members-associate" %}active{% endif %}" href="{{ 'members/all-members'|page }}">Members</a></li>
+      <li><a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a></li>
+        {% else %}
+      <li><a class="{% if this.page.url == "/login" %}active{% endif %}" href="{{ 'auth/login'|page }}">
+          {% if not user %}
+          Login
+          {% else %}
+          My Profile
+          {% endif %}
+      </a></li>
+      <li><a class="{% if this.page.url == "/register" %}active{% endif %}" href="{{ 'auth/register'|page }}">Register</a></li>
+        {% endif %}
+    </ul>
+
+  <div class="header-social-links d-flex">
+    <a class="twitter" href="#"><i class="bu bi-twitter"></i></a>
+    <a class="facebook" href="#"><i class="bu bi-facebook"></i></a>
+    <a class="instagram" href="#"><i class="bu bi-instagram"></i></a>
+    <a class="linkedin" href="#"><i class="bu bi-linkedin"></i></a>
+  </div>
+
+ 	<!-- Replace me-auto to ms-auto  -->
+    <i class="bi bi-list mobile-nav-toggle"></i>
+  </nav>
+  <!-- .navbar -->
+</div>

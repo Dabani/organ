@@ -1,0 +1,10 @@
+name: Networks
+form: $/dabani/members/models/network/fields.yaml
+modelClass: Dabani\Members\Models\Network
+defaultRedirect: dabani/members/networks
+create:
+    redirect: 'dabani/members/networks/update/:id'
+    redirectClose: dabani/members/networks
+update:
+    redirect: dabani/members/networks
+    redirectClose: dabani/members/networks

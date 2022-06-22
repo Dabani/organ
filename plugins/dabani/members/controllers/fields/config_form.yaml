@@ -1,0 +1,10 @@
+name: Fields
+form: $/dabani/members/models/field/fields.yaml
+modelClass: Dabani\Members\Models\Field
+defaultRedirect: dabani/members/fields
+create:
+    redirect: 'dabani/members/fields/update/:id'
+    redirectClose: dabani/members/fields
+update:
+    redirect: dabani/members/fields
+    redirectClose: dabani/members/fields

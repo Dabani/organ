@@ -1,0 +1,4 @@
+title: Profiles
+modelClass: Dabani\Members\Models\Profile
+toolbar:
+    buttons: reorder_toolbar

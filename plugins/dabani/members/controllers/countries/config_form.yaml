@@ -1,0 +1,10 @@
+name: Countries
+form: $/dabani/members/models/country/fields.yaml
+modelClass: Dabani\Members\Models\Country
+defaultRedirect: dabani/members/countries
+create:
+    redirect: 'dabani/members/countries/update/:id'
+    redirectClose: dabani/members/countries
+update:
+    redirect: dabani/members/countries
+    redirectClose: dabani/members/countries

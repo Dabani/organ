@@ -1,0 +1,4 @@
+title: Networks
+modelClass: Dabani\Members\Models\Network
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,10 @@
+name: Activities
+form: $/dabani/actions/models/activity/fields.yaml
+modelClass: Dabani\Actions\Models\Activity
+defaultRedirect: dabani/actions/activities
+create:
+    redirect: 'dabani/actions/activities/update/:id'
+    redirectClose: dabani/actions/activities
+update:
+    redirect: dabani/actions/activities
+    redirectClose: dabani/actions/activities

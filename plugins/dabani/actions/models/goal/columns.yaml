@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    activity_id:
+        label: Activity
+        type: number
+        searchable: true
+        sortable: true
+        select: name
+        relation: activity
+    name:
+        label: Goal
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: status
+        type: text
+        sortable: true

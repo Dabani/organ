@@ -1,0 +1,4 @@
+title: Levels
+modelClass: Dabani\Members\Models\Level
+toolbar:
+    buttons: reorder_toolbar

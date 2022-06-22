@@ -1,0 +1,10 @@
+name: Positions
+form: $/dabani/members/models/position/fields.yaml
+modelClass: Dabani\Members\Models\Position
+defaultRedirect: dabani/members/positions
+create:
+    redirect: 'dabani/members/positions/update/:id'
+    redirectClose: dabani/members/positions
+update:
+    redirect: dabani/members/positions
+    redirectClose: dabani/members/positions

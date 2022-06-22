@@ -1,0 +1,4 @@
+title: Assignments
+modelClass: Dabani\Actions\Models\Assignment
+toolbar:
+    buttons: reorder_toolbar

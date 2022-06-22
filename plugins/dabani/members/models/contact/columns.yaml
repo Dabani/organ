@@ -1,0 +1,44 @@
+columns:
+    member_id:
+        label: 'Full name'
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name, " ", last_name)'
+        relation: member
+    country_id:
+        label: Residence
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: country
+    province:
+        label: Province
+        type: text
+        searchable: true
+        sortable: true
+    city:
+        label: City
+        type: text
+        searchable: true
+        sortable: true
+    village:
+        label: Village
+        type: text
+        searchable: true
+        sortable: true
+    street:
+        label: Street
+        type: text
+        searchable: true
+        sortable: true
+    telephone:
+        label: Telephone
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

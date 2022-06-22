@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    task_id:
+        label: Task
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: task
+    name:
+        label: Challenge
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

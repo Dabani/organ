@@ -1,0 +1,32 @@
+columns:
+    member_id:
+        label: 'Full name'
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name, " ", last_name)'
+        relation: member
+    promise_date:
+        label: 'Date of Scout Promise'
+        type: date
+        searchable: true
+        sortable: true
+    unit_affiliation:
+        label: 'Scout Unit Affiliation'
+        type: text
+        searchable: true
+        sortable: true
+    totem:
+        label: Totem
+        type: text
+        searchable: true
+        sortable: true
+    totem_date:
+        label: 'Totem Date'
+        type: date
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

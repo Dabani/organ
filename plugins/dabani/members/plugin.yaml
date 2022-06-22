@@ -1,0 +1,104 @@
+plugin:
+  name: "dabani.members::lang.plugin.name"
+  description: "dabani.members::lang.plugin.description"
+  author: "Makuta Robert"
+  icon: oc-icon-users
+  homepage: ""
+navigation:
+  main-menu-item:
+    label: Members
+    url: dabani/members/members
+    icon: icon-users
+    sideMenu:
+      side-menu-country:
+        label: Countries
+        url: dabani/members/countries
+        icon: icon-globe
+      side-menu-level:
+        label: "Education Levels"
+        url: dabani/members/levels
+        icon: icon-tree
+      side-menu-field:
+        label: "Education Fields"
+        url: dabani/members/fields
+        icon: icon-filter
+      side-menu-department:
+        label: Departments
+        url: dabani/members/departments
+        icon: icon-tags
+      side-menu-training:
+        label: Trainings
+        url: dabani/members/trainings
+        icon: icon-certificate
+      side-menu-profession:
+        label: Professions
+        url: dabani/members/professions
+        icon: icon-tasks
+      side-menu-profile:
+        label: Profiles
+        url: dabani/members/profiles
+        icon: icon-user
+      side-menu-studies:
+        label: Studies
+        url: dabani/members/studies
+        icon: icon-book
+      side-menu-coaching:
+        label: Coachings
+        url: dabani/members/coachings
+        icon: icon-graduation-cap
+      side-menu-career:
+        label: Careers
+        url: dabani/members/careers
+        icon: icon-legal
+      side-menu-contact:
+        label: Contacts
+        url: dabani/members/contacts
+        icon: icon-file-picture-o
+      side-menu-network:
+        label: "Social Media"
+        url: dabani/members/networks
+        icon: icon-share-alt
+      side-menu-scout:
+        label: Scouting
+        url: dabani/members/scoutings
+        icon: icon-user-secret
+      side-menu-membership:
+        label: Memberships
+        url: dabani/members/memberships
+        icon: icon-heartbeat
+      side-menu-committee:
+        label: Committees
+        url: dabani/members/committees
+        icon: icon-sitemap
+      side-menu-commission:
+        label: Commissions
+        url: dabani/members/commissions
+        icon: icon-paw
+      side-menu-position:
+        label: Positions
+        url: dabani/members/positions
+        icon: icon-gears
+      side-menu-director:
+        label: "Committee Members"
+        url: dabani/members/directors
+        icon: icon-sitemap
+      side-menu-com-memb:
+        label: "Commissions Members"
+        url: dabani/members/commissionsmembers
+        icon: icon-paw
+      side-menu-cause:
+        label: Causes
+        url: dabani/members/causes
+        icon: icon-heart
+      side-menu-event:
+        label: Events
+        url: dabani/members/events
+        icon: icon-calendar
+      side-menu-contribution:
+        label: Contributions
+        url: dabani/members/contributions
+        icon: icon-money
+      side-menu-skill:
+        label: Skills
+        url: dabani/members/skills
+        icon: icon-stethoscope

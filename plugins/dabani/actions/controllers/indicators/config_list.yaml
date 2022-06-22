@@ -1,0 +1,12 @@
+list: $/dabani/actions/models/indicator/columns.yaml
+modelClass: Dabani\Actions\Models\Indicator
+title: Indicators
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dabani/actions/indicators/update/:id'

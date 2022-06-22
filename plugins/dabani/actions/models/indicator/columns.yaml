@@ -1,0 +1,42 @@
+columns:
+  id:
+    label: id
+    type: number
+    sortable: true
+  objective_id:
+    label: Objective
+    type: number
+    searchable: true
+    sortable: true
+    select: name
+    relation: objective
+  name:
+    label: Indicator
+    type: text
+    searchable: true
+    sortable: true
+  measure:
+    label: Measurement
+    type: text
+    searchable: true
+    sortable: true
+  unity:
+    label: Unity
+    type: text
+    searchable: true
+    sortable: true
+  quantity_planned:
+    label: Planned
+    type: number
+    searchable: true
+    sortable: true
+  quantity_released:
+    label: Released
+    type: number
+    searchable: true
+    sortable: true
+  status:
+    label: Status
+    type: text
+    searchable: false
+    sortable: true

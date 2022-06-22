@@ -1,0 +1,4 @@
+title: Directors
+modelClass: Dabani\Members\Models\Director
+toolbar:
+    buttons: reorder_toolbar

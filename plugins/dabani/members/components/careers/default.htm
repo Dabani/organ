@@ -1,0 +1,7 @@
+{% set careers = __SELF__.careers %}
+
+<ul>
+  {% for career in careers %}
+    <li>{{ career.name }}</li>
+  {% endfor %}
+</ul>

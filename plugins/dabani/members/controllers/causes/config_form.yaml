@@ -1,0 +1,10 @@
+name: Causes
+form: $/dabani/members/models/cause/fields.yaml
+modelClass: Dabani\Members\Models\Cause
+defaultRedirect: dabani/members/causes
+create:
+    redirect: 'dabani/members/causes/update/:id'
+    redirectClose: dabani/members/causes
+update:
+    redirect: dabani/members/causes
+    redirectClose: dabani/members/causes

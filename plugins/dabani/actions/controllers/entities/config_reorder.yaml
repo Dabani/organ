@@ -1,0 +1,4 @@
+title: Entities
+modelClass: Dabani\Actions\Models\Entity
+toolbar:
+    buttons: reorder_toolbar

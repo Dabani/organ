@@ -1,0 +1,40 @@
+fields:
+    name:
+        label: Event
+        span: left
+        placeholder: 'Event Title'
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    description:
+        label: Description
+        size: tiny
+        span: left
+        type: richeditor
+    event_date:
+        label: Date
+        mode: date
+        span: right
+        type: datepicker
+    time:
+        label: Time
+        mode: time
+        span: right
+        required: 0
+        type: datepicker
+    venue:
+        label: Venue
+        span: left
+        required: 1
+        type: text
+    status:
+        label: Status
+        span: right
+        type: switch

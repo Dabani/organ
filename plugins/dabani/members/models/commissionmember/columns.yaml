@@ -1,0 +1,36 @@
+columns:
+    commission_id:
+        label: Commission
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: commission
+    position_id:
+        label: Position
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: position
+    member_id:
+        label: 'Full name'
+        type: text
+        searchable: true
+        sortable: true
+        select: 'concat(first_name, " ", last_name)'
+        relation: member
+    from:
+        label: From
+        type: date
+        searchable: true
+        sortable: true
+    to:
+        label: To
+        type: date
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

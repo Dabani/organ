@@ -1,0 +1,27 @@
+fields:
+    member:
+        label: 'Full name'
+        nameFrom: name
+        descriptionFrom: description
+        select: 'concat(first_name, " ", last_name)'
+        span: left
+        required: 1
+        type: relation
+    name:
+        label: 'Social Media Name'
+        span: right
+        required: 1
+        type: text
+    social_media_id:
+        label: 'Social Media ID'
+        span: left
+        type: text
+    url:
+        label: 'Social Media Link'
+        span: right
+        required: 1
+        type: text
+    status:
+        label: Status
+        span: left
+        type: switch

@@ -1,0 +1,10 @@
+name: Departments
+form: $/dabani/members/models/department/fields.yaml
+modelClass: Dabani\Members\Models\Department
+defaultRedirect: dabani/members/departments
+create:
+    redirect: 'dabani/members/departments/update/:id'
+    redirectClose: dabani/members/departments
+update:
+    redirect: dabani/members/departments
+    redirectClose: dabani/members/departments

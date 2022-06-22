@@ -1,0 +1,4 @@
+title: MaterialTasks
+modelClass: Dabani\Actions\Models\MaterialTask
+toolbar:
+    buttons: reorder_toolbar

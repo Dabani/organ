@@ -1,0 +1,51 @@
+fields:
+    member:
+        label: 'Full name'
+        nameFrom: name
+        descriptionFrom: description
+        select: 'concat(first_name, " ", last_name)'
+        span: left
+        required: 1
+        type: relation
+    level:
+        label: 'Level of studies'
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        type: relation
+    name:
+        label: Title
+        span: left
+        placeholder: 'Name of studies'
+        required: 1
+        type: text
+    description:
+        label: Description
+        size: small
+        span: right
+        placeholder: 'Short description of the subject studied'
+        type: richeditor
+    from:
+        label: 'Start of studies'
+        mode: date
+        format: '"D-m-Y"'
+        span: left
+        required: 1
+        type: datepicker
+    to:
+        label: 'End of studies'
+        mode: date
+        format: '"D-m-Y"'
+        span: right
+        required: 1
+        type: datepicker
+    institution:
+        label: Institution
+        span: left
+        placeholder: 'Enter name of School/College/University'
+        required: 1
+        type: text
+    status:
+        label: Status
+        span: right
+        type: switch

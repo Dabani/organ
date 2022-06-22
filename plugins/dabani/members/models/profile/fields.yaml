@@ -1,0 +1,55 @@
+fields:
+    profile:
+        label: 'Full name'
+        nameFrom: name
+        descriptionFrom: description
+        select: 'concat(first_name, " ", last_name)'
+        span: left
+        required: 1
+        type: relation
+    gender:
+        label: Gender
+        options:
+            F: Female
+            M: Male
+        span: auto
+        required: 1
+        type: radio
+    nationality:
+        label: Nationality
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    id_passport:
+        label: ID/Passport
+        span: right
+        required: 1
+        type: text
+    date_of_birth:
+        label: 'Date of Birth'
+        mode: date
+        format: '"Y-m-d"'
+        span: auto
+        required: 1
+        type: datepicker
+    place_of_birth:
+        label: 'Place of Birth'
+        span: right
+        type: text
+    status:
+        label: Status
+        span: right
+        type: switch
+    poster:
+        label: 'Profile photo'
+        span: left
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        imageHeight: '124'
+        imageWidth: '124'
+        type: fileupload

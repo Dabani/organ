@@ -1,0 +1,32 @@
+{% set associates = __SELF__.associates %}
+{% set groups = __SELF__.groups %}
+{% set details = __SELF__.details %}
+{% set profile = __SELF__.profile %}
+{% set profiles = __SELF__.profiles %}
+
+<div class="container my-4">
+  {% if user %}
+  <div class="row">
+    <h3 class="text-center">Welcome {{ user.name }}!</h3>
+  </div>
+  {% endif %}
+
+  <div class="row">
+    {% for associate in associates %}
+    <div class="col-sm-3">
+      <div class="card border-0 shadow-sm my-2">
+        {% if associate.profile.poster %}
+          <img src="{{ associate.profile.poster.thumb(400,400,{'mode':'crop'}) }}" class="img-fluid img-card">
+          {% else %}
+          <img src="{{ 'assets/images/user-default.png'|theme }}" class="img-fluid img-card">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ associate.last_name }} {{ associate.first_name }}</h5>
+          <p class="card-text"><a href="mailto:{{ associate.email }}">{{ associate.email }}</a></p>
+          <a href="/associate/{{ associate.id }}" class="btn btn-primary">View Profile</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

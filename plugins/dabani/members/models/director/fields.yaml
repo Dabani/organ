@@ -1,0 +1,38 @@
+fields:
+    committee:
+        label: Committee
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    position:
+        label: Position
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        required: 1
+        type: relation
+    member:
+        label: 'Full name'
+        nameFrom: name
+        descriptionFrom: description
+        select: 'concat(first_name, " ", last_name)'
+        span: left
+        required: 1
+        type: relation
+    status:
+        label: Status
+        span: right
+        type: switch
+    from:
+        label: From
+        mode: date
+        span: left
+        required: 1
+        type: datepicker
+    to:
+        label: To
+        span: right
+        mode: date
+        type: datepicker

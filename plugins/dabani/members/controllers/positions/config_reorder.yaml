@@ -1,0 +1,4 @@
+title: Positions
+modelClass: Dabani\Members\Models\Position
+toolbar:
+    buttons: reorder_toolbar

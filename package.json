@@ -1,0 +1,23 @@
+{
+  "name": "rasal-winter",
+  "version": "1.0.0",
+  "description": "RASAL Official Website",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Rasal",
+    "Winter",
+    "Laravel"
+  ],
+  "author": "Robert Makuta",
+  "license": "ISC",
+  "dependencies": {
+    "boxicons": "^2.1.2",
+    "standard": "^17.0.0"
+  }
+}

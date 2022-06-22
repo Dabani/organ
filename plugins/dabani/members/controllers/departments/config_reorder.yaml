@@ -1,0 +1,4 @@
+title: Departments
+modelClass: Dabani\Members\Models\Department
+toolbar:
+    buttons: reorder_toolbar
