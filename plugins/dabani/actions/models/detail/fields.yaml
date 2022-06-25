@@ -1,0 +1,28 @@
+fields:
+    concept:
+        label: Concept
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: 1
+        type: relation
+    user:
+        label: Responsible
+        nameFrom: name
+        descriptionFrom: description
+        span: right
+        required: 1
+        type: relation
+    organizer:
+        label: Organizer
+        span: auto
+        type: text
+    description:
+        label: Description
+        size: tiny
+        span: right
+        type: richeditor
+    status:
+        label: Status
+        span: left
+        type: switch

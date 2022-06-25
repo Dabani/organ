@@ -1,74 +1,74 @@
 fields:
-    name:
-        label: Title
-        span: left
-        required: 1
-        type: text
-    slug:
-        label: Slug
-        span: right
-        required: 1
-        preset:
-            field: name
-            type: slug
-        type: text
-    description:
-        label: Description
-        size: tiny
-        span: left
-        type: richeditor
-    category:
-        label: Category
-        options:
-            program: Program
-            communication: Communication
-            event: Event
-            project: Project
-            meeting: Meeting
-            expense: Expense
-        showSearch: true
-        span: auto
-        type: dropdown
-    start:
-        label: Start
-        mode: datetime
-        yearRange: '[2016,2025]'
-        span: left
-        type: datepicker
-    end:
-        label: End
-        mode: datetime
-        span: right
-        type: datepicker
-    state:
-        label: State
-        span: auto
-        showSearch: true
-        options:
-            pending: Pending
-            ongoing: Ongoing
-            complete: Complete
-            postponed: Postponed
-            cancelled: Cancelled
-        type: dropdown
-    goals:
-        label: Goals
-        nameFrom: name
-        descriptionFrom: description
-        span: full
-        type: partial
-        path: field_goal
-    objectives:
-        label: Objectives
-        nameFrom: name
-        descriptionFrom: description
-        span: full
-        type: partial
-        path: field_objective
-    tasks:
-        label: Tasks
-        nameFrom: name
-        descriptionFrom: description
-        span: full
-        type: partial
-        path: field_task
+  name:
+    label: Title
+    span: left
+    required: 1
+    type: text
+  slug:
+    label: Slug
+    span: right
+    required: 1
+    preset:
+      field: name
+      type: slug
+    type: text
+  description:
+    label: Description
+    size: tiny
+    span: left
+    type: richeditor
+  category:
+    label: Category
+    options:
+      program: Program
+      communication: Communication
+      event: Event
+      project: Project
+      meeting: Meeting
+      expense: Expense
+    showSearch: true
+    span: auto
+    type: dropdown
+  start:
+    label: Start
+    mode: datetime
+    yearRange: "[2016,2025]"
+    span: left
+    type: datepicker
+  end:
+    label: End
+    mode: datetime
+    span: right
+    type: datepicker
+  state:
+    label: State
+    span: auto
+    showSearch: true
+    options:
+      pending: Pending
+      ongoing: Ongoing
+      complete: Complete
+      postponed: Postponed
+      cancelled: Cancelled
+    type: dropdown
+  goals:
+    label: Goals
+    nameFrom: name
+    descriptionFrom: description
+    span: full
+    type: partial
+    path: field_goal
+  objectives:
+    label: Objectives
+    nameFrom: name
+    descriptionFrom: description
+    span: full
+    type: partial
+    path: field_objective
+  tasks:
+    label: Tasks
+    nameFrom: name
+    descriptionFrom: description
+    span: full
+    type: partial
+    path: field_task

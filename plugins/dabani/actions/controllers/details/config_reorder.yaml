@@ -1,0 +1,4 @@
+title: Details
+modelClass: Dabani\Actions\Models\Detail
+toolbar:
+    buttons: reorder_toolbar

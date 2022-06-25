@@ -42,3 +42,6 @@
 1.0.15:
     - 'Created table dabani_actions_concepts'
     - builder_table_create_dabani_actions_concepts.php
+1.0.16:
+    - 'Created table dabani_actions_details'
+    - builder_table_create_dabani_actions_details.php

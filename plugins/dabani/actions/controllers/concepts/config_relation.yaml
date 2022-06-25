@@ -1,0 +1,7 @@
+details:
+  label: Detail
+  manage:
+    form: $\dabani\actions\models\detail\fields.yaml
+    list: $\dabani\actions\models\detail\columns.yaml
+  view:
+    list: $\dabani\actions\models\detail\columns.yaml

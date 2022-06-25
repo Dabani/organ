@@ -1,36 +1,38 @@
-<?php namespace Dabani\Actions\Models;
+<?php
+
+namespace Dabani\Actions\Models;
 
 use Winter\Storm\Database\Model;
 use Dabani\Actions\Models\Goal;
 use Dabani\Actions\Models\Objective;
 use Dabani\Actions\Models\Indicator;
+use Dabani\Actions\Models\Concept;
 
 /**
  * Model
  */
 class Activity extends Model
 {
-    use \Winter\Storm\Database\Traits\Validation;
+  use \Winter\Storm\Database\Traits\Validation;
 
-    use \Winter\Storm\Database\Traits\SoftDelete;
+  use \Winter\Storm\Database\Traits\SoftDelete;
 
-    protected $dates = ['deleted_at'];
+  protected $dates = ['deleted_at'];
 
 
-    /**
-     * @var string The database table used by the model.
-     */
-    public $table = 'dabani_actions_activities';
+  /**
+   * @var string The database table used by the model.
+   */
+  public $table = 'dabani_actions_activities';
 
-    /**
-     * @var array Validation rules
-     */
-    public $rules = [
-    ];
+  /**
+   * @var array Validation rules
+   */
+  public $rules = [];
 
-    /**
-     * Relations
-     */
+  /**
+   * Relations
+   */
 
   public $hasMany = [
     'goals' => [
@@ -49,12 +51,11 @@ class Activity extends Model
       'order' => 'name'
     ]
   ];
-  /*
-  public $hasManyThrough = [
-    'indicators' => [
-      Indicator::class,
-      'through'     =>  Objective::class,
-      ]
+
+  public $hasOne = [
+    'concept' => [
+      Concept::class,
+      'table' => 'dabani_actions_concepts'
+    ]
   ];
-   */
 }

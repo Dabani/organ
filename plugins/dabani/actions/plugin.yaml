@@ -50,3 +50,11 @@ navigation:
                 label: Assignments
                 url: dabani/actions/assignments
                 icon: icon-edit
+            side-menu-concept:
+                label: Concepts
+                url: dabani/actions/concepts
+                icon: icon-gears
+            side-menu-detail:
+                label: Details
+                url: dabani/actions/details
+                icon: icon-list

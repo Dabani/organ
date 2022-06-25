@@ -1,0 +1,10 @@
+name: Details
+form: $/dabani/actions/models/detail/fields.yaml
+modelClass: Dabani\Actions\Models\Detail
+defaultRedirect: dabani/actions/details
+create:
+    redirect: 'dabani/actions/details/update/:id'
+    redirectClose: dabani/actions/details
+update:
+    redirect: dabani/actions/details
+    redirectClose: dabani/actions/details

@@ -1,0 +1,32 @@
+columns:
+  name:
+    label: "Concept Title"
+    type: text
+    searchable: true
+    sortable: true
+  activity_id:
+    label: Activity
+    type: text
+    searchable: true
+    sortable: true
+    select: name
+    relation: activity
+  goal:
+    label: Goal
+    type: text
+    searchable: true
+    sortable: true
+  cost:
+    label: Cost
+    type: number
+    searchable: true
+    sortable: true
+  currency:
+    label: Currency
+    type: text
+    searchable: true
+    sortable: true
+  status:
+    label: Status
+    type: switch
+    sortable: true

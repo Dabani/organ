@@ -1,0 +1,4 @@
+title: Concepts
+modelClass: Dabani\Actions\Models\Concept
+toolbar:
+    buttons: reorder_toolbar

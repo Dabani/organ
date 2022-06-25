@@ -3,13 +3,13 @@
 namespace Dabani\Actions\Models;
 
 use Winter\Storm\Database\Model;
-use Dabani\Actions\Models\Activity;
-use Dabani\Actions\Models\Detail;
+use Winter\User\Models\User;
+use Dabani\Actions\Models\Concept;
 
 /**
  * Model
  */
-class Concept extends Model
+class Detail extends Model
 {
   use \Winter\Storm\Database\Traits\Validation;
 
@@ -21,7 +21,7 @@ class Concept extends Model
   /**
    * @var string The database table used by the model.
    */
-  public $table = 'dabani_actions_concepts';
+  public $table = 'dabani_actions_details';
 
   /**
    * @var array Validation rules
@@ -33,18 +33,15 @@ class Concept extends Model
    */
 
   public $belongsTo = [
-    'activity' => [
-      Activity::class,
-      'table'   => 'dabani_actions_activities',
-      'order' => 'name'
-    ]
-  ];
-
-  public $hasMany = [
-    'details' => [
-      Detail::class,
-      'table' => 'dabani_actions_details',
+    'concept' => [
+      Concept::class,
+      'table' => 'dabani_actions_concepts',
       'order' => 'id'
+    ],
+    'user' => [
+      User::class,
+      'table' => 'users',
+      'order' => 'name'
     ]
   ];
 }

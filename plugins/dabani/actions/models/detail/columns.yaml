@@ -1,0 +1,24 @@
+columns:
+    concept_id:
+        label: Concept
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: concept
+    user_id:
+        label: Responsible
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: user
+    organizer:
+        label: Organizer
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true
