@@ -1,0 +1,10 @@
+name: Partners
+form: $/dabani/actions/models/partner/fields.yaml
+modelClass: Dabani\Actions\Models\Partner
+defaultRedirect: dabani/actions/partners
+create:
+    redirect: 'dabani/actions/partners/update/:id'
+    redirectClose: dabani/actions/partners
+update:
+    redirect: dabani/actions/partners
+    redirectClose: dabani/actions/partners

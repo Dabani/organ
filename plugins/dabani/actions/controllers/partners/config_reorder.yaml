@@ -1,0 +1,4 @@
+title: Partners
+modelClass: Dabani\Actions\Models\Partner
+toolbar:
+    buttons: reorder_toolbar

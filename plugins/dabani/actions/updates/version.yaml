@@ -45,3 +45,18 @@
 1.0.16:
     - 'Created table dabani_actions_details'
     - builder_table_create_dabani_actions_details.php
+1.0.17:
+    - 'Created table dabani_actions_beneficiaries'
+    - builder_table_create_dabani_actions_beneficiaries.php
+1.0.18:
+    - 'Created table dabani_actions_inputs'
+    - builder_table_create_dabani_actions_inputs.php
+1.0.19:
+    - 'Created table dabani_actions_outputs'
+    - builder_table_create_dabani_actions_outputs.php
+1.0.20:
+    - 'Created table dabani_actions_outcomes'
+    - builder_table_create_dabani_actions_outcomes.php
+1.0.21:
+    - 'Created table dabani_actions_partners'
+    - builder_table_create_dabani_actions_partners.php

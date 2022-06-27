@@ -1,0 +1,16 @@
+columns:
+    concept_id:
+        label: Concept
+        type: text
+        sortable: true
+        select: name
+        relation: concept
+    name:
+        label: Activity
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

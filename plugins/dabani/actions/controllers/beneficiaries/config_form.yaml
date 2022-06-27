@@ -1,0 +1,10 @@
+name: Beneficiaries
+form: $/dabani/actions/models/beneficiary/fields.yaml
+modelClass: Dabani\Actions\Models\Beneficiary
+defaultRedirect: dabani/actions/beneficiaries
+create:
+    redirect: 'dabani/actions/beneficiaries/update/:id'
+    redirectClose: dabani/actions/beneficiaries
+update:
+    redirect: dabani/actions/beneficiaries
+    redirectClose: dabani/actions/beneficiaries

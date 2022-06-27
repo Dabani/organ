@@ -3,8 +3,8 @@ form: $/dabani/actions/models/concept/fields.yaml
 modelClass: Dabani\Actions\Models\Concept
 defaultRedirect: dabani/actions/concepts
 create:
-    redirect: 'dabani/actions/concepts/update/:id'
-    redirectClose: dabani/actions/concepts
+  redirect: "dabani/actions/concepts/update/:id"
+  redirectClose: dabani/actions/concepts
 update:
-    redirect: dabani/actions/concepts
-    redirectClose: dabani/actions/concepts
+  redirect: dabani/actions/concepts
+  redirectClose: dabani/actions/concepts

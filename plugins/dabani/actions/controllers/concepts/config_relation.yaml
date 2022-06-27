@@ -5,3 +5,38 @@ details:
     list: $\dabani\actions\models\detail\columns.yaml
   view:
     list: $\dabani\actions\models\detail\columns.yaml
+beneficiaries:
+  label: Beneficiary
+  manage:
+    form: $\dabani\actions\models\beneficiary\fields.yaml
+    list: $\dabani\actions\models\beneficiary\columns.yaml
+  view:
+    list: $\dabani\actions\models\beneficiary\columns.yaml
+inputs:
+  label: Input
+  manage:
+    form: $\dabani\actions\models\input\fields.yaml
+    list: $\dabani\actions\models\input\columns.yaml
+  view:
+    list: $\dabani\actions\models\input\columns.yaml
+outputs:
+  label: Outputs
+  manage:
+    form: $\dabani\actions\models\output\fields.yaml
+    list: $\dabani\actions\models\output\columns.yaml
+  view:
+    list: $\dabani\actions\models\output\columns.yaml
+outcomes:
+  label: Outcomes
+  manage:
+    form: $\dabani\actions\models\outcome\fields.yaml
+    list: $\dabani\actions\models\outcome\columns.yaml
+  view:
+    list: $\dabani\actions\models\outcome\columns.yaml
+partners:
+  label: Partners
+  manage:
+    form: $\dabani\actions\models\partner\fields.yaml
+    list: $\dabani\actions\models\partner\columns.yaml
+  view:
+    list: $\dabani\actions\models\partner\columns.yaml

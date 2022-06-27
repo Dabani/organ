@@ -1,0 +1,10 @@
+name: Outcomes
+form: $/dabani/actions/models/outcome/fields.yaml
+modelClass: Dabani\Actions\Models\Outcome
+defaultRedirect: dabani/actions/outcomes
+create:
+    redirect: 'dabani/actions/outcomes/update/:id'
+    redirectClose: dabani/actions/outcomes
+update:
+    redirect: dabani/actions/outcomes
+    redirectClose: dabani/actions/outcomes

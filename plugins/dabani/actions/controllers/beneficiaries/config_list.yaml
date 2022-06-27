@@ -1,0 +1,12 @@
+list: $/dabani/actions/models/beneficiary/columns.yaml
+modelClass: Dabani\Actions\Models\Beneficiary
+title: Beneficiaries
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dabani/actions/beneficiaries/update/:id'

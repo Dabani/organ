@@ -1,0 +1,17 @@
+columns:
+    concept_id:
+        label: Concept
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: concept
+    name:
+        label: Beneficiary
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: Status
+        type: switch
+        sortable: true

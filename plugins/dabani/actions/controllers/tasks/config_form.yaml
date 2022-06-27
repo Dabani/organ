@@ -3,8 +3,8 @@ form: $/dabani/actions/models/task/fields.yaml
 modelClass: Dabani\Actions\Models\Task
 defaultRedirect: dabani/actions/tasks
 create:
-    redirect: 'dabani/actions/tasks/update/:id'
-    redirectClose: dabani/actions/tasks
+  redirect: "dabani/actions/tasks/update/:id"
+  redirectClose: dabani/actions/tasks
 update:
-    redirect: dabani/actions/tasks
-    redirectClose: dabani/actions/tasks
+  redirect: dabani/actions/tasks
+  redirectClose: dabani/actions/tasks

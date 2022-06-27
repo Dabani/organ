@@ -58,3 +58,23 @@ navigation:
                 label: Details
                 url: dabani/actions/details
                 icon: icon-list
+            side-menu-beneficiary:
+                label: Beneficiaries
+                url: dabani/actions/beneficiaries
+                icon: icon-user-plus
+            side-menu-input:
+                label: Inputs
+                url: dabani/actions/inputs
+                icon: icon-plus-circle
+            side-menu-output:
+                label: Outputs
+                url: dabani/actions/outputs
+                icon: icon-minus-circle
+            side-menu-outcome:
+                label: Outcomes
+                url: dabani/actions/outcomes
+                icon: icon-sign-out
+            side-menu-partner:
+                label: Parners
+                url: dabani/actions/partners
+                icon: icon-support

@@ -1,0 +1,12 @@
+list: $/dabani/actions/models/output/columns.yaml
+modelClass: Dabani\Actions\Models\Output
+title: Outputs
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dabani/actions/outputs/update/:id'

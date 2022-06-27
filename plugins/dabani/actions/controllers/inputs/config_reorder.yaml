@@ -1,0 +1,4 @@
+title: Inputs
+modelClass: Dabani\Actions\Models\Input
+toolbar:
+    buttons: reorder_toolbar

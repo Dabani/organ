@@ -1,0 +1,4 @@
+title: Outcomes
+modelClass: Dabani\Actions\Models\Outcome
+toolbar:
+    buttons: reorder_toolbar

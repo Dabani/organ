@@ -1,0 +1,17 @@
+columns:
+    concept_id:
+        label: Concept
+        type: text
+        searchable: true
+        sortable: true
+        select: name
+        relation: concept
+    name:
+        label: Outcome
+        type: text
+        searchable: true
+        sortable: true
+    status:
+        label: status
+        type: switch
+        sortable: true

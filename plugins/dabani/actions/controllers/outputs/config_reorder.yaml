@@ -1,0 +1,4 @@
+title: Outputs
+modelClass: Dabani\Actions\Models\Output
+toolbar:
+    buttons: reorder_toolbar

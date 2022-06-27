@@ -8,8 +8,10 @@ use Backend\Facades\BackendMenu;
 class Concepts extends Controller
 {
   public $implement = [
-    'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController',
-    'Backend\Behaviors\ReorderController',        'Backend\Behaviors\RelationController'
+    'Backend\Behaviors\ListController',
+    'Backend\Behaviors\FormController',
+    'Backend\Behaviors\ReorderController',
+    'Backend\Behaviors\RelationController'
   ];
 
   public $listConfig = 'config_list.yaml';

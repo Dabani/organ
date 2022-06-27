@@ -1,0 +1,10 @@
+name: Inputs
+form: $/dabani/actions/models/input/fields.yaml
+modelClass: Dabani\Actions\Models\Input
+defaultRedirect: dabani/actions/inputs
+create:
+    redirect: 'dabani/actions/inputs/update/:id'
+    redirectClose: dabani/actions/inputs
+update:
+    redirect: dabani/actions/inputs
+    redirectClose: dabani/actions/inputs

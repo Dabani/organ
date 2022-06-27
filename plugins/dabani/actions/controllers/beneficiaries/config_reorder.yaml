@@ -1,0 +1,4 @@
+title: Beneficiaries
+modelClass: Dabani\Actions\Models\Beneficiary
+toolbar:
+    buttons: reorder_toolbar

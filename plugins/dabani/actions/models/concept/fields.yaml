@@ -1,80 +1,106 @@
 fields:
-  name:
-    label: "Concept Title"
-    span: left
-    required: 1
-    type: text
-  slug:
-    label: Slug
-    span: right
-    required: 1
-    preset:
-      field: name
-      type: slug
-    type: text
-  activity:
-    label: Activity
-    nameFrom: name
-    descriptionFrom: description
-    span: left
-    required: 1
-    type: relation
-  goal:
-    label: Goal
-    span: right
-    required: 1
-    type: text
-  summary:
-    label: Summary
-    size: tiny
-    span: left
-    required: 1
-    type: richeditor
-  problem:
-    label: Problem
-    size: tiny
-    span: right
-    required: 1
-    type: richeditor
-  approach:
-    label: Approach
-    size: tiny
-    span: left
-    required: 1
-    type: richeditor
-  monitoring:
-    label: Monitoring
-    size: tiny
-    span: right
-    type: richeditor
-  cost:
-    label: Cost
-    span: left
-    required: 1
-    type: number
-  currency:
-    label: Currency
-    options:
-      rwf: RWF
-      euro: EURO
-      usd: USD
-      pd: Pound
-    showSearch: true
-    span: right
-    type: dropdown
-  sustainability:
-    label: Sustainability
-    size: "tiny"
-    span: left
-    type: richeditor
-  status:
-    label: Status
-    span: right
-    type: switch
-  details:
-    label: Details
-    nameFrom: name
-    descriptionFrom: description
-    span: full
-    type: partial
-    path: field_detail
+    name:
+        label: 'Concept Title'
+        span: left
+        required: true
+        type: text
+    slug:
+        label: Slug
+        span: right
+        required: true
+        preset:
+            field: name
+            type: slug
+        type: text
+    activity:
+        label: Activity
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+        required: true
+        type: relation
+    goal:
+        label: Goal
+        span: right
+        required: true
+        type: text
+    summary:
+        label: Summary
+        size: tiny
+        span: left
+        required: true
+        type: richeditor
+    problem:
+        label: Problem
+        size: tiny
+        span: right
+        required: true
+        type: richeditor
+    approach:
+        label: Approach
+        size: tiny
+        span: left
+        required: true
+        type: richeditor
+    monitoring:
+        label: Monitoring
+        size: tiny
+        span: right
+        type: richeditor
+    cost:
+        label: Cost
+        span: left
+        required: true
+        type: number
+    currency:
+        label: Currency
+        options:
+            rwf: RWF
+            euro: EURO
+            usd: USD
+            pd: Pound
+        showSearch: true
+        span: right
+        type: dropdown
+    sustainability:
+        label: Sustainability
+        size: tiny
+        span: left
+        type: richeditor
+    status:
+        label: Status
+        span: right
+        type: switch
+    details:
+        label: Details
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: partial
+        path: field_detail
+    beneficiaries:
+        label: Beneficiaries
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: partial
+        path: field_beneficiary
+    inputs:
+        label: Acitivities
+        nameFrom: name
+        descriptionFrom: description
+        span: full
+        type: partial
+        path: field_input
+    outputs:
+        span: full
+        path: field_output
+        type: partial
+    outcomes:
+        span: full
+        path: field_outcome
+        type: partial
+    partners:
+        span: full
+        path: field_partner
+        type: partial
